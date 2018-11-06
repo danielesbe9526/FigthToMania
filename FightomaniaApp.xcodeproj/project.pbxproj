@@ -37,6 +37,11 @@
 		5CEA39512191389100A748B4 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393E2191389000A748B4 /* Lato-Italic.ttf */; };
 		5CEA39522191389100A748B4 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393F2191389000A748B4 /* Lato-Heavy.ttf */; };
 		5CEA39532191389100A748B4 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39402191389000A748B4 /* Lato-Light.ttf */; };
+		5CEA39552191F24F00A748B4 /* SingUpName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39542191F24F00A748B4 /* SingUpName.swift */; };
+		5CEA39572191F90B00A748B4 /* SingUpBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39562191F90B00A748B4 /* SingUpBirthday.swift */; };
+		5CEA39592192044900A748B4 /* SingUpFighterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39582192044900A748B4 /* SingUpFighterName.swift */; };
+		5CEA395B219205FF00A748B4 /* SingUpPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395A219205FF00A748B4 /* SingUpPassword.swift */; };
+		5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395C219206C600A748B4 /* SingUpVerification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +98,11 @@
 		5CEA393E2191389000A748B4 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		5CEA393F2191389000A748B4 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
 		5CEA39402191389000A748B4 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		5CEA39542191F24F00A748B4 /* SingUpName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpName.swift; sourceTree = "<group>"; };
+		5CEA39562191F90B00A748B4 /* SingUpBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpBirthday.swift; sourceTree = "<group>"; };
+		5CEA39582192044900A748B4 /* SingUpFighterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpFighterName.swift; sourceTree = "<group>"; };
+		5CEA395A219205FF00A748B4 /* SingUpPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpPassword.swift; sourceTree = "<group>"; };
+		5CEA395C219206C600A748B4 /* SingUpVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVerification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				5CC60C33218F927000178836 /* LoginView.swift */,
+				5CEA39542191F24F00A748B4 /* SingUpName.swift */,
+				5CEA39562191F90B00A748B4 /* SingUpBirthday.swift */,
+				5CEA39582192044900A748B4 /* SingUpFighterName.swift */,
+				5CEA395A219205FF00A748B4 /* SingUpPassword.swift */,
 				5CEA392A2191340200A748B4 /* SingUpEmail.swift */,
+				5CEA395C219206C600A748B4 /* SingUpVerification.swift */,
 			);
 			path = "View´s";
 			sourceTree = "<group>";
@@ -174,6 +189,7 @@
 				5CC60C32218F925600178836 /* LogIn */,
 				5CEA392C2191383E00A748B4 /* resources */,
 				5CC60C06218F917D00178836 /* ViewController.swift */,
+				5CC60C10218F918100178836 /* Info.plist */,
 				5CC60C04218F917D00178836 /* AppDelegate.swift */,
 				5CC60C08218F917D00178836 /* Main.storyboard */,
 				5CC60C0D218F918100178836 /* LaunchScreen.storyboard */,
@@ -209,7 +225,6 @@
 		5CEA392C2191383E00A748B4 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				5CC60C10218F918100178836 /* Info.plist */,
 				5CC60C0B218F918100178836 /* Assets.xcassets */,
 				5CEA392D2191386800A748B4 /* Fonts */,
 			);
@@ -392,12 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CEA395B219205FF00A748B4 /* SingUpPassword.swift in Sources */,
 				5CC60C39218F930F00178836 /* LoginModel.swift in Sources */,
 				5CC60C37218F92F000178836 /* LoginViewModel.swift in Sources */,
 				5CEA392B2191340200A748B4 /* SingUpEmail.swift in Sources */,
 				5CC60C34218F927000178836 /* LoginView.swift in Sources */,
+				5CEA39592192044900A748B4 /* SingUpFighterName.swift in Sources */,
+				5CEA39572191F90B00A748B4 /* SingUpBirthday.swift in Sources */,
 				5CC60C07218F917D00178836 /* ViewController.swift in Sources */,
+				5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */,
 				5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */,
+				5CEA39552191F24F00A748B4 /* SingUpName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

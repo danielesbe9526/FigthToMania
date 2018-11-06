@@ -56,7 +56,7 @@ class LoginView: UIViewController {
         signUpLabel.addGestureRecognizer(tap)
         
         welcomeLabel.frame          = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 20)
-        signUpLabel.frame           = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 20)
+        signUpLabel.frame           = CGRect(x: 0, y: 75, width: self.view.frame.width, height: 20)
         logoImage.frame             = CGRect(x: 40, y: 150, width: self.view.frame.width-80, height: 170)
         fighterNameLabel.frame      = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
         imputfighterName.frame      = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
@@ -84,10 +84,14 @@ class LoginView: UIViewController {
         
         let text            = NSLocalizedString("Sign Up Here", comment: "")
         var label           = UILabel()
-        label.text          = text
+//        label.text          = text
         label.textAlignment = .center
         label.textColor     = UIColor(red: 217/255, green: 0/255, blue: 154/255, alpha: 1)
         label.font          = UIFont(name: "Lato-Regular", size: 18)
+        
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+        let underlineAttributedString = NSAttributedString(string: text, attributes: underlineAttribute)
+        label.attributedText = underlineAttributedString
         return label
     }()
     
@@ -109,15 +113,15 @@ class LoginView: UIViewController {
     
     let imputfighterName : UITextField = {
         let text = UITextField()
-        text.placeholder                = "Enter your Name"
+        text.placeholder                = "Enter Fighter Name"
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
         text.keyboardType               = UIKeyboardType.alphabet
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        text.textColor                  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        text.tintColor                  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let colorText = NSAttributedString(string: "Enter your mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        text.attributedText = colorText
         return text
     }()
     
@@ -139,7 +143,8 @@ class LoginView: UIViewController {
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        text.textColor                  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let colorText = NSAttributedString(string: "Enter your Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        text.attributedText = colorText
         return text
     }()
     
@@ -188,6 +193,6 @@ class LoginView: UIViewController {
     }
     
     @objc func SingUp() {
-    self.navigationController?.pushViewController(SingUpEmail(), animated: true)
+    self.navigationController?.pushViewController(SingUpName(), animated: true)
     }
 }
