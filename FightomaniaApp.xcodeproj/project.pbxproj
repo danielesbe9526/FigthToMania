@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C04218F917D00178836 /* AppDelegate.swift */; };
+		5CC60C07218F917D00178836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C06218F917D00178836 /* ViewController.swift */; };
+		5CC60C0A218F917D00178836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC60C08218F917D00178836 /* Main.storyboard */; };
+		5CC60C0C218F918100178836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC60C0B218F918100178836 /* Assets.xcassets */; };
+		5CC60C0F218F918100178836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC60C0D218F918100178836 /* LaunchScreen.storyboard */; };
+		5CC60C1A218F918100178836 /* FightomaniaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C19218F918100178836 /* FightomaniaAppTests.swift */; };
+		5CC60C25218F918100178836 /* FightomaniaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C24218F918100178836 /* FightomaniaAppUITests.swift */; };
+		5CC60C34218F927000178836 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C33218F927000178836 /* LoginView.swift */; };
+		5CC60C37218F92F000178836 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C36218F92F000178836 /* LoginViewModel.swift */; };
+		5CC60C39218F930F00178836 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C38218F930F00178836 /* LoginModel.swift */; };
+		5CEA392B2191340200A748B4 /* SingUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA392A2191340200A748B4 /* SingUpEmail.swift */; };
+		5CEA39412191389100A748B4 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA392E2191388D00A748B4 /* Lato-MediumItalic.ttf */; };
+		5CEA39422191389100A748B4 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA392F2191388E00A748B4 /* Lato-SemiboldItalic.ttf */; };
+		5CEA39432191389100A748B4 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39302191388E00A748B4 /* Lato-BlackItalic.ttf */; };
+		5CEA39442191389100A748B4 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39312191388E00A748B4 /* Lato-BoldItalic.ttf */; };
+		5CEA39452191389100A748B4 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39322191388E00A748B4 /* Lato-HairlineItalic.ttf */; };
+		5CEA39462191389100A748B4 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39332191388E00A748B4 /* Lato-Black.ttf */; };
+		5CEA39472191389100A748B4 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39342191388F00A748B4 /* Lato-Thin.ttf */; };
+		5CEA39482191389100A748B4 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39352191388F00A748B4 /* Lato-Semibold.ttf */; };
+		5CEA39492191389100A748B4 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39362191388F00A748B4 /* Lato-ThinItalic.ttf */; };
+		5CEA394A2191389100A748B4 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39372191388F00A748B4 /* Lato-LightItalic.ttf */; };
+		5CEA394B2191389100A748B4 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39382191388F00A748B4 /* Lato-Hairline.ttf */; };
+		5CEA394C2191389100A748B4 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39392191388F00A748B4 /* Lato-Bold.ttf */; };
+		5CEA394D2191389100A748B4 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393A2191388F00A748B4 /* SIL Open Font License.txt */; };
+		5CEA394E2191389100A748B4 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393B2191389000A748B4 /* Lato-Medium.ttf */; };
+		5CEA394F2191389100A748B4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393C2191389000A748B4 /* Lato-Regular.ttf */; };
+		5CEA39502191389100A748B4 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393D2191389000A748B4 /* Lato-HeavyItalic.ttf */; };
+		5CEA39512191389100A748B4 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393E2191389000A748B4 /* Lato-Italic.ttf */; };
+		5CEA39522191389100A748B4 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA393F2191389000A748B4 /* Lato-Heavy.ttf */; };
+		5CEA39532191389100A748B4 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39402191389000A748B4 /* Lato-Light.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CC60C16218F918100178836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CC60BF9218F917D00178836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CC60C00218F917D00178836;
+			remoteInfo = FightomaniaApp;
+		};
+		5CC60C21218F918100178836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CC60BF9218F917D00178836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CC60C00218F917D00178836;
+			remoteInfo = FightomaniaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5CC60C01218F917D00178836 /* FightomaniaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightomaniaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC60C04218F917D00178836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CC60C06218F917D00178836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CC60C09218F917D00178836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CC60C0B218F918100178836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CC60C0E218F918100178836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CC60C10218F918100178836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CC60C15218F918100178836 /* FightomaniaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FightomaniaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC60C19218F918100178836 /* FightomaniaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightomaniaAppTests.swift; sourceTree = "<group>"; };
+		5CC60C1B218F918100178836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CC60C20218F918100178836 /* FightomaniaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FightomaniaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC60C24218F918100178836 /* FightomaniaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightomaniaAppUITests.swift; sourceTree = "<group>"; };
+		5CC60C26218F918100178836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CC60C33218F927000178836 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5CC60C36218F92F000178836 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5CC60C38218F930F00178836 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		5CEA392A2191340200A748B4 /* SingUpEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingUpEmail.swift; sourceTree = "<group>"; };
+		5CEA392E2191388D00A748B4 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		5CEA392F2191388E00A748B4 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39302191388E00A748B4 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39312191388E00A748B4 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39322191388E00A748B4 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39332191388E00A748B4 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		5CEA39342191388F00A748B4 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		5CEA39352191388F00A748B4 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		5CEA39362191388F00A748B4 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39372191388F00A748B4 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		5CEA39382191388F00A748B4 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		5CEA39392191388F00A748B4 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		5CEA393A2191388F00A748B4 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		5CEA393B2191389000A748B4 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		5CEA393C2191389000A748B4 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		5CEA393D2191389000A748B4 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		5CEA393E2191389000A748B4 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		5CEA393F2191389000A748B4 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		5CEA39402191389000A748B4 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CC60BFE218F917D00178836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C12218F918100178836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C1D218F918100178836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C695482218FB4E200289B4D /* View´s */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C33218F927000178836 /* LoginView.swift */,
+				5CEA392A2191340200A748B4 /* SingUpEmail.swift */,
+			);
+			path = "View´s";
+			sourceTree = "<group>";
+		};
+		5C695483218FB4ED00289B4D /* Model´s */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C38218F930F00178836 /* LoginModel.swift */,
+			);
+			path = "Model´s";
+			sourceTree = "<group>";
+		};
+		5C695484218FB4F700289B4D /* ViewModel´s */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C36218F92F000178836 /* LoginViewModel.swift */,
+			);
+			path = "ViewModel´s";
+			sourceTree = "<group>";
+		};
+		5CC60BF8218F917D00178836 = {
+			isa = PBXGroup;
+			children = (
+				5CC60C03218F917D00178836 /* FightomaniaApp */,
+				5CC60C18218F918100178836 /* FightomaniaAppTests */,
+				5CC60C23218F918100178836 /* FightomaniaAppUITests */,
+				5CC60C02218F917D00178836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CC60C02218F917D00178836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C01218F917D00178836 /* FightomaniaApp.app */,
+				5CC60C15218F918100178836 /* FightomaniaAppTests.xctest */,
+				5CC60C20218F918100178836 /* FightomaniaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CC60C03218F917D00178836 /* FightomaniaApp */ = {
+			isa = PBXGroup;
+			children = (
+				5C695484218FB4F700289B4D /* ViewModel´s */,
+				5C695483218FB4ED00289B4D /* Model´s */,
+				5C695482218FB4E200289B4D /* View´s */,
+				5CC60C32218F925600178836 /* LogIn */,
+				5CEA392C2191383E00A748B4 /* resources */,
+				5CC60C06218F917D00178836 /* ViewController.swift */,
+				5CC60C04218F917D00178836 /* AppDelegate.swift */,
+				5CC60C08218F917D00178836 /* Main.storyboard */,
+				5CC60C0D218F918100178836 /* LaunchScreen.storyboard */,
+			);
+			path = FightomaniaApp;
+			sourceTree = "<group>";
+		};
+		5CC60C18218F918100178836 /* FightomaniaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C19218F918100178836 /* FightomaniaAppTests.swift */,
+				5CC60C1B218F918100178836 /* Info.plist */,
+			);
+			path = FightomaniaAppTests;
+			sourceTree = "<group>";
+		};
+		5CC60C23218F918100178836 /* FightomaniaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C24218F918100178836 /* FightomaniaAppUITests.swift */,
+				5CC60C26218F918100178836 /* Info.plist */,
+			);
+			path = FightomaniaAppUITests;
+			sourceTree = "<group>";
+		};
+		5CC60C32218F925600178836 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		5CEA392C2191383E00A748B4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CC60C10218F918100178836 /* Info.plist */,
+				5CC60C0B218F918100178836 /* Assets.xcassets */,
+				5CEA392D2191386800A748B4 /* Fonts */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		5CEA392D2191386800A748B4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5CEA39332191388E00A748B4 /* Lato-Black.ttf */,
+				5CEA39302191388E00A748B4 /* Lato-BlackItalic.ttf */,
+				5CEA39392191388F00A748B4 /* Lato-Bold.ttf */,
+				5CEA39312191388E00A748B4 /* Lato-BoldItalic.ttf */,
+				5CEA39382191388F00A748B4 /* Lato-Hairline.ttf */,
+				5CEA39322191388E00A748B4 /* Lato-HairlineItalic.ttf */,
+				5CEA393F2191389000A748B4 /* Lato-Heavy.ttf */,
+				5CEA393D2191389000A748B4 /* Lato-HeavyItalic.ttf */,
+				5CEA393E2191389000A748B4 /* Lato-Italic.ttf */,
+				5CEA39402191389000A748B4 /* Lato-Light.ttf */,
+				5CEA39372191388F00A748B4 /* Lato-LightItalic.ttf */,
+				5CEA393B2191389000A748B4 /* Lato-Medium.ttf */,
+				5CEA392E2191388D00A748B4 /* Lato-MediumItalic.ttf */,
+				5CEA393C2191389000A748B4 /* Lato-Regular.ttf */,
+				5CEA39352191388F00A748B4 /* Lato-Semibold.ttf */,
+				5CEA392F2191388E00A748B4 /* Lato-SemiboldItalic.ttf */,
+				5CEA39342191388F00A748B4 /* Lato-Thin.ttf */,
+				5CEA39362191388F00A748B4 /* Lato-ThinItalic.ttf */,
+				5CEA393A2191388F00A748B4 /* SIL Open Font License.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CC60C00218F917D00178836 /* FightomaniaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CC60C29218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaApp" */;
+			buildPhases = (
+				5CC60BFD218F917D00178836 /* Sources */,
+				5CC60BFE218F917D00178836 /* Frameworks */,
+				5CC60BFF218F917D00178836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FightomaniaApp;
+			productName = FightomaniaApp;
+			productReference = 5CC60C01218F917D00178836 /* FightomaniaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CC60C14218F918100178836 /* FightomaniaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CC60C2C218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaAppTests" */;
+			buildPhases = (
+				5CC60C11218F918100178836 /* Sources */,
+				5CC60C12218F918100178836 /* Frameworks */,
+				5CC60C13218F918100178836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CC60C17218F918100178836 /* PBXTargetDependency */,
+			);
+			name = FightomaniaAppTests;
+			productName = FightomaniaAppTests;
+			productReference = 5CC60C15218F918100178836 /* FightomaniaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5CC60C1F218F918100178836 /* FightomaniaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CC60C2F218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaAppUITests" */;
+			buildPhases = (
+				5CC60C1C218F918100178836 /* Sources */,
+				5CC60C1D218F918100178836 /* Frameworks */,
+				5CC60C1E218F918100178836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CC60C22218F918100178836 /* PBXTargetDependency */,
+			);
+			name = FightomaniaAppUITests;
+			productName = FightomaniaAppUITests;
+			productReference = 5CC60C20218F918100178836 /* FightomaniaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CC60BF9218F917D00178836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Usuario1;
+				TargetAttributes = {
+					5CC60C00218F917D00178836 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					5CC60C14218F918100178836 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5CC60C00218F917D00178836;
+					};
+					5CC60C1F218F918100178836 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5CC60C00218F917D00178836;
+					};
+				};
+			};
+			buildConfigurationList = 5CC60BFC218F917D00178836 /* Build configuration list for PBXProject "FightomaniaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CC60BF8218F917D00178836;
+			productRefGroup = 5CC60C02218F917D00178836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CC60C00218F917D00178836 /* FightomaniaApp */,
+				5CC60C14218F918100178836 /* FightomaniaAppTests */,
+				5CC60C1F218F918100178836 /* FightomaniaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CC60BFF218F917D00178836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CEA39522191389100A748B4 /* Lato-Heavy.ttf in Resources */,
+				5CEA39422191389100A748B4 /* Lato-SemiboldItalic.ttf in Resources */,
+				5CEA394C2191389100A748B4 /* Lato-Bold.ttf in Resources */,
+				5CEA39532191389100A748B4 /* Lato-Light.ttf in Resources */,
+				5CEA39492191389100A748B4 /* Lato-ThinItalic.ttf in Resources */,
+				5CEA39462191389100A748B4 /* Lato-Black.ttf in Resources */,
+				5CEA39482191389100A748B4 /* Lato-Semibold.ttf in Resources */,
+				5CC60C0F218F918100178836 /* LaunchScreen.storyboard in Resources */,
+				5CEA39452191389100A748B4 /* Lato-HairlineItalic.ttf in Resources */,
+				5CEA39432191389100A748B4 /* Lato-BlackItalic.ttf in Resources */,
+				5CEA39412191389100A748B4 /* Lato-MediumItalic.ttf in Resources */,
+				5CEA394B2191389100A748B4 /* Lato-Hairline.ttf in Resources */,
+				5CEA39512191389100A748B4 /* Lato-Italic.ttf in Resources */,
+				5CC60C0C218F918100178836 /* Assets.xcassets in Resources */,
+				5CEA394D2191389100A748B4 /* SIL Open Font License.txt in Resources */,
+				5CEA394E2191389100A748B4 /* Lato-Medium.ttf in Resources */,
+				5CEA39502191389100A748B4 /* Lato-HeavyItalic.ttf in Resources */,
+				5CEA394F2191389100A748B4 /* Lato-Regular.ttf in Resources */,
+				5CEA39472191389100A748B4 /* Lato-Thin.ttf in Resources */,
+				5CEA39442191389100A748B4 /* Lato-BoldItalic.ttf in Resources */,
+				5CC60C0A218F917D00178836 /* Main.storyboard in Resources */,
+				5CEA394A2191389100A748B4 /* Lato-LightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C13218F918100178836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C1E218F918100178836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CC60BFD218F917D00178836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CC60C39218F930F00178836 /* LoginModel.swift in Sources */,
+				5CC60C37218F92F000178836 /* LoginViewModel.swift in Sources */,
+				5CEA392B2191340200A748B4 /* SingUpEmail.swift in Sources */,
+				5CC60C34218F927000178836 /* LoginView.swift in Sources */,
+				5CC60C07218F917D00178836 /* ViewController.swift in Sources */,
+				5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C11218F918100178836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CC60C1A218F918100178836 /* FightomaniaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CC60C1C218F918100178836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CC60C25218F918100178836 /* FightomaniaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CC60C17218F918100178836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CC60C00218F917D00178836 /* FightomaniaApp */;
+			targetProxy = 5CC60C16218F918100178836 /* PBXContainerItemProxy */;
+		};
+		5CC60C22218F918100178836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CC60C00218F917D00178836 /* FightomaniaApp */;
+			targetProxy = 5CC60C21218F918100178836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5CC60C08218F917D00178836 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CC60C09218F917D00178836 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CC60C0D218F918100178836 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CC60C0E218F918100178836 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CC60C27218F918100178836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CC60C28218F918100178836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CC60C2A218F918100178836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CC60C2B218F918100178836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5CC60C2D218F918100178836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FightomaniaApp.app/FightomaniaApp";
+			};
+			name = Debug;
+		};
+		5CC60C2E218F918100178836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FightomaniaApp.app/FightomaniaApp";
+			};
+			name = Release;
+		};
+		5CC60C30218F918100178836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FightomaniaApp;
+			};
+			name = Debug;
+		};
+		5CC60C31218F918100178836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WW5K829KP9;
+				INFOPLIST_FILE = FightomaniaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.FightomaniaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FightomaniaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CC60BFC218F917D00178836 /* Build configuration list for PBXProject "FightomaniaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CC60C27218F918100178836 /* Debug */,
+				5CC60C28218F918100178836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CC60C29218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CC60C2A218F918100178836 /* Debug */,
+				5CC60C2B218F918100178836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CC60C2C218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CC60C2D218F918100178836 /* Debug */,
+				5CC60C2E218F918100178836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CC60C2F218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CC60C30218F918100178836 /* Debug */,
+				5CC60C31218F918100178836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CC60BF9218F917D00178836 /* Project object */;
+}
