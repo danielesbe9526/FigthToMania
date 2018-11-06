@@ -171,10 +171,10 @@
 				5C695484218FB4F700289B4D /* ViewModel´s */,
 				5C695483218FB4ED00289B4D /* Model´s */,
 				5C695482218FB4E200289B4D /* View´s */,
-				5CC60C32218F925600178836 /* LogIn */,
 				5CEA392C2191383E00A748B4 /* resources */,
 				5CC60C06218F917D00178836 /* ViewController.swift */,
 				5CC60C04218F917D00178836 /* AppDelegate.swift */,
+				5CC60C10218F918100178836 /* Info.plist */,
 				5CC60C08218F917D00178836 /* Main.storyboard */,
 				5CC60C0D218F918100178836 /* LaunchScreen.storyboard */,
 			);
@@ -199,17 +199,9 @@
 			path = FightomaniaAppUITests;
 			sourceTree = "<group>";
 		};
-		5CC60C32218F925600178836 /* LogIn */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LogIn;
-			sourceTree = "<group>";
-		};
 		5CEA392C2191383E00A748B4 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				5CC60C10218F918100178836 /* Info.plist */,
 				5CC60C0B218F918100178836 /* Assets.xcassets */,
 				5CEA392D2191386800A748B4 /* Fonts */,
 			);
@@ -573,8 +565,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WW5K829KP9;
-				INFOPLIST_FILE = FightomaniaApp/Info.plist;
+				DEVELOPMENT_TEAM = 32P6SWM9B4;
+				INFOPLIST_FILE = "$(SRCROOT)/FightomaniaApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -592,8 +584,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WW5K829KP9;
-				INFOPLIST_FILE = FightomaniaApp/Info.plist;
+				DEVELOPMENT_TEAM = 32P6SWM9B4;
+				INFOPLIST_FILE = "$(SRCROOT)/FightomaniaApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

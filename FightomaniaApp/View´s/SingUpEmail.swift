@@ -39,8 +39,8 @@ class SingUpEmail: UIViewController {
         self.view.addSubview(continueButton)
         self.view.addSubview(backButton)
         
-        emailAddress.frame          = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 20)
-        descriptionLabel.frame      = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
+        emailAddress.frame          = CGRect(x: 200, y: 100, width: 300, height: 20)
+        descriptionLabel.frame      = CGRect(x: self.view.frame.width/2-100, y: 150, width: 200, height: 20)
         emailLabel.frame            = CGRect(x: 50, y: 200, width: self.view.frame.width, height: 20)
         imputfEmail.frame           = CGRect(x: 50, y: 250, width: self.view.frame.width, height: 20)
         continueButton.frame        = CGRect(x: 50, y: 400, width: 300, height: 40)
@@ -59,9 +59,12 @@ class SingUpEmail: UIViewController {
     
     
     let  descriptionLabel : UILabel = {
-        let text            = NSLocalizedString("We will send you a confirmation code/for complete the registration", comment: "")
+        let text            = NSLocalizedString("We will send you a confirmation code for complete the registration", comment: "")
+        
         var label           = UILabel()
         label.text          = text
+        label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor     = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6100706336)
         label.font          = UIFont(name: "Lato-Regular", size: 12)
