@@ -178,16 +178,16 @@ class LoginView: UIViewController {
     }()
     
     let  staySignedInLabel : UILabel = {
-        let text            = NSLocalizedString("Stay Signed In", comment: "")
-        var label           = UILabel()
-        label.text          = text
-        label.textColor     = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
-        label.font          = UIFont(name: "Lato-Regular", size: 12)
+        let text        = NSLocalizedString("Stay Signed In", comment: "")
+        var label       = UILabel()
+        label.text      = text
+        label.textColor  = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
+        label.font      = UIFont(name: "Lato-Regular", size: 12)
         return label
     }()
     
     let staySignedButton : UISwitch = {
-       let signedSwitch             = UISwitch()
+       let signedSwitch            = UISwitch()
         signedSwitch.onTintColor    = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         return signedSwitch
     }()
@@ -210,10 +210,10 @@ class LoginView: UIViewController {
     let  forgetPasswordLabel : UILabel = {
         let text = NSLocalizedString("I don´t remember my password", comment: "")
         var label = UILabel()
-        label.text          = text
-        label.textColor     = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
-        label.font          = UIFont(name: "Lato-Regular", size: 12)
-        label.textAlignment = .center
+        label.text              = text
+        label.textColor          = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
+        label.font              = UIFont(name: "Lato-Regular", size: 12)
+        label.textAlignment       = .center
         return label
     }()
     
@@ -252,40 +252,7 @@ class LoginView: UIViewController {
         alert.addAction(UIAlertAction(title: "Reset Password", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
-//        UIAlertController * alert = [UIAlertController
-//            alertControllerWithTitle:productName
-//            message:[NSString stringWithFormat:@"$ %ld",(long)producPrice]
-//            preferredStyle:UIAlertControllerStyleAlert];
-//
-//        [alert addTextFieldWithConfigurationHandler:^(UITextField * textField) {
-//            textField.keyboardAppearance = UIKeyboardAppearanceDark;
-//            textField.keyboardType = UIKeyboardTypeNumberPad;
-//            textField.placeholder = @"1";
-//            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//            textField.borderStyle = UITextBorderStyleNone;
-//            }];
-//
-//
-//        UIAlertAction* addButton = [UIAlertAction
-//            actionWithTitle:@"Add"
-//            style:UIAlertActionStyleCancel
-//            handler:^(UIAlertAction * action) {
-//            [self validateInfo:productName Price:producPrice Id:productId Image:productImage Alert:alert];
-//            }];
-//
-//        UIAlertAction* dismissButton = [UIAlertAction
-//            actionWithTitle:@"Cancel"
-//            style:UIAlertActionStyleDestructive
-//            handler:^(UIAlertAction * action) {
-//
-//            }];
-//
-//        [alert addAction:dismissButton];
-//        [alert addAction:addButton];
-//        [self presentViewController:alert animated:YES completion:nil];
-        
-        
+    
         
     }
 }

@@ -130,7 +130,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C695482218FB4E200289B4D /* View´s */ = {
+		5C695482218FB4E200289B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5CC60C33218F927000178836 /* LoginView.swift */,
@@ -141,23 +141,23 @@
 				5CEA392A2191340200A748B4 /* SingUpEmail.swift */,
 				5CEA395C219206C600A748B4 /* SingUpVerification.swift */,
 			);
-			path = "View´s";
+			path = Views;
 			sourceTree = "<group>";
 		};
-		5C695483218FB4ED00289B4D /* Model´s */ = {
+		5C695483218FB4ED00289B4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5CC60C38218F930F00178836 /* LoginModel.swift */,
 			);
-			path = "Model´s";
+			path = Models;
 			sourceTree = "<group>";
 		};
-		5C695484218FB4F700289B4D /* ViewModel´s */ = {
+		5C695484218FB4F700289B4D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				5CC60C36218F92F000178836 /* LoginViewModel.swift */,
 			);
-			path = "ViewModel´s";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5CC60BF8218F917D00178836 = {
@@ -183,10 +183,9 @@
 		5CC60C03218F917D00178836 /* FightomaniaApp */ = {
 			isa = PBXGroup;
 			children = (
-				5C695484218FB4F700289B4D /* ViewModel´s */,
-				5C695483218FB4ED00289B4D /* Model´s */,
-				5C695482218FB4E200289B4D /* View´s */,
-				5CC60C32218F925600178836 /* LogIn */,
+				5C695484218FB4F700289B4D /* ViewModels */,
+				5C695483218FB4ED00289B4D /* Models */,
+				5C695482218FB4E200289B4D /* Views */,
 				5CEA392C2191383E00A748B4 /* resources */,
 				5CC60C06218F917D00178836 /* ViewController.swift */,
 				5CC60C10218F918100178836 /* Info.plist */,
@@ -213,13 +212,6 @@
 				5CC60C26218F918100178836 /* Info.plist */,
 			);
 			path = FightomaniaAppUITests;
-			sourceTree = "<group>";
-		};
-		5CC60C32218F925600178836 /* LogIn */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LogIn;
 			sourceTree = "<group>";
 		};
 		5CEA392C2191383E00A748B4 /* resources */ = {
