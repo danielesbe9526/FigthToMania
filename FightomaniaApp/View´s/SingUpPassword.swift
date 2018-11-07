@@ -19,22 +19,30 @@ class SingUpPassword: UIViewController {
         setUpView()
         self.navigationController?.navigationBar.tintColor = defaultColor
         
+        let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(hideKeyboard)
     }
     
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func setUpView()  {
         
         self.view.addSubview(tittle)
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(nameLabel)
-        self.view.addSubview(imputfName)
+        self.view.addSubview(imputPassword)
+        self.view.addSubview(underLineImputPassword)
         self.view.addSubview(continueButton)
         
-        tittle.frame            = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
-        descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-100, y: 180, width:200 , height: 50)
-        nameLabel.frame         = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
-        imputfName.frame        = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
-        continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
+        tittle.frame                    = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
+        descriptionLabel.frame          = CGRect(x: self.view.frame.width/2-100, y: 180, width:200 , height: 50)
+        nameLabel.frame                 = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
+        imputPassword.frame             = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
+        underLineImputPassword.frame    = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
+        continueButton.frame            = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
     
     let  tittle : UILabel = {
@@ -67,9 +75,9 @@ class SingUpPassword: UIViewController {
         return label
     }()
     
-    let imputfName : UITextField = {
+    let imputPassword : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -78,6 +86,11 @@ class SingUpPassword: UIViewController {
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
         return text
+    }()
+    let underLineImputPassword : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let continueButton : UIButton = {

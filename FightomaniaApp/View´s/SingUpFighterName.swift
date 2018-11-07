@@ -20,8 +20,14 @@ class SingUpFighterName: UIViewController {
         setUpView()
         self.navigationController?.navigationBar.tintColor = defaultColor
 
+        let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(hideKeyboard)
     }
     
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func setUpView()  {
         
@@ -29,12 +35,14 @@ class SingUpFighterName: UIViewController {
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(nameLabel)
         self.view.addSubview(imputfName)
+        self.view.addSubview(underLineImputfName)
         self.view.addSubview(continueButton)
         
         tittle.frame            = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
         descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-100, y: 180, width:200 , height: 50)
         nameLabel.frame         = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
         imputfName.frame        = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
+        underLineImputfName.frame = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
     
@@ -70,7 +78,7 @@ class SingUpFighterName: UIViewController {
     
     let imputfName : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: "Enter your Fighter Name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -79,6 +87,11 @@ class SingUpFighterName: UIViewController {
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
         return text
+    }()
+    let underLineImputfName : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let continueButton : UIButton = {

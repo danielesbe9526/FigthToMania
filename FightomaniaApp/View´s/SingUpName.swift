@@ -35,18 +35,22 @@ class SingUpName: UIViewController {
         self.view.addSubview(tittle)
         self.view.addSubview(nameLabel)
         self.view.addSubview(imputfName)
+        self.view.addSubview(underLineImputfName)
         self.view.addSubview(lastNameLabel)
         self.view.addSubview(imputLastName)
+        self.view.addSubview(underLineImputLastName)
         self.view.addSubview(termsAndPrivacyLabel)
         self.view.addSubview(continueButton)
         
-        tittle.frame                = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
-        nameLabel.frame             = CGRect(x: 50, y: 300, width: self.view.frame.width , height: 20)
-        imputfName.frame            = CGRect(x: 50, y: 330, width: self.view.frame.width, height: 20)
-        lastNameLabel.frame         = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
-        imputLastName.frame         = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
-        termsAndPrivacyLabel.frame  = CGRect(x: self.view.frame.width/2-125, y: 500, width:250 , height: 50)
-        continueButton.frame        = CGRect(x: 50, y: 600, width: 300, height: 40)
+        tittle.frame                    = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
+        nameLabel.frame                 = CGRect(x: 50, y: 300, width: self.view.frame.width , height: 20)
+        imputfName.frame                = CGRect(x: 50, y: 330, width: self.view.frame.width, height: 20)
+        underLineImputfName.frame       = CGRect(x: 50, y: 350, width: self.view.frame.width-100, height: 2)
+        lastNameLabel.frame             = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
+        imputLastName.frame             = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
+        underLineImputLastName.frame    = CGRect(x: 50, y: 420, width: self.view.frame.width-100, height: 2)
+        termsAndPrivacyLabel.frame      = CGRect(x: self.view.frame.width/2-125, y: 500, width:250 , height: 50)
+        continueButton.frame            = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
     
     let  tittle : UILabel = {
@@ -72,7 +76,7 @@ class SingUpName: UIViewController {
     
     let imputfName : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: "Enter your Name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -82,6 +86,13 @@ class SingUpName: UIViewController {
         text.autocapitalizationType     = .none
         return text
     }()
+    
+    let underLineImputfName : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
+    }()
+    
     
     
     let  lastNameLabel : UILabel = {
@@ -95,7 +106,7 @@ class SingUpName: UIViewController {
     
     let imputLastName: UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: "Enter your last name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -105,6 +116,14 @@ class SingUpName: UIViewController {
         text.autocapitalizationType     = .none
         return text
     }()
+    
+    let underLineImputLastName : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
+    }()
+    
+  
     
     let  termsAndPrivacyLabel : UILabel = {
 //        let blackLabel = NSAttributedString(string: "Sign Up & Accept", attributes: [NSAttributedString.Key.foregroundColor : UIColor.blue])

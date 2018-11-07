@@ -20,6 +20,13 @@ class SingUpVerification: UIViewController {
         setUpView()
         self.navigationController?.navigationBar.tintColor = defaultColor
         
+        let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(hideKeyboard)
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -29,6 +36,7 @@ class SingUpVerification: UIViewController {
         self.view.addSubview(tittle2)
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(imput)
+        self.view.addSubview(underLine)
         self.view.addSubview(descriptionInput)
         self.view.addSubview(continueButton)
         
@@ -36,6 +44,7 @@ class SingUpVerification: UIViewController {
         tittle2.frame           = CGRect(x: self.view.frame.width/2-65, y: 170, width: 130, height: 50)
         descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-75, y: 250, width:150 , height: 50)
         imput.frame             = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
+        underLine.frame         = CGRect(x: 50, y: 370, width: self.view.frame.width-100, height: 2)
         descriptionInput.frame  = CGRect(x: self.view.frame.width/2-125, y: 380, width: 250, height: 50)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
@@ -77,7 +86,7 @@ class SingUpVerification: UIViewController {
     
     let imput : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: "-------------", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -86,6 +95,12 @@ class SingUpVerification: UIViewController {
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
         return text
+    }()
+    
+    let underLine : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let  descriptionInput : UILabel = {

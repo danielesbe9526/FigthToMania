@@ -24,10 +24,20 @@ class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         birthdaypicker.dataSource = self
         birthdaypicker.delegate = self
         birthdaypicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.03769798801)
+        
+  
+    
 
         self.view.addSubview(birthdaypicker)
         birthdaypicker.frame    = CGRect(x: 10, y: 300, width: self.view.frame.width-20, height: 100)
+        
+        let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(hideKeyboard)
+    }
 
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -35,17 +45,10 @@ class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDel
 
         self.view.addSubview(continueButton)
         self.view.addSubview(tittle)
-       
-        
+
         tittle.frame            = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
-    
-//    let birthdaypicker : UIPickerView = {
-//       let picker = UIPickerView()
-//
-//        return picker
-//    }()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
@@ -91,6 +94,7 @@ class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         
         }
     }
+    
     let  tittle : UILabel = {
         let text            = NSLocalizedString("When is your birthday?", comment: "")
         var label           = UILabel()

@@ -39,14 +39,19 @@ class LoginView: UIViewController {
     
     func setUpView()  {
         let tap = UITapGestureRecognizer(target: self, action: #selector(SingUp))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(rememberPasword))
 
+        
         self.view.addSubview(welcomeLabel)
         self.view.addSubview(signUpLabel)
+        self.view.addSubview(underLine)
         self.view.addSubview(logoImage)
         self.view.addSubview(fighterNameLabel)
         self.view.addSubview(imputfighterName)
+        self.view.addSubview(underLineImputfighterName)
         self.view.addSubview(passwordLabel)
         self.view.addSubview(imputPassword)
+        self.view.addSubview(underLineImputPassword)
         self.view.addSubview(staySignedInLabel)
         self.view.addSubview(staySignedButton)
         self.view.addSubview(logInButton)
@@ -55,17 +60,23 @@ class LoginView: UIViewController {
         signUpLabel.isUserInteractionEnabled = true
         signUpLabel.addGestureRecognizer(tap)
         
-        welcomeLabel.frame          = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 20)
-        signUpLabel.frame           = CGRect(x: 0, y: 75, width: self.view.frame.width, height: 20)
-        logoImage.frame             = CGRect(x: 40, y: 150, width: self.view.frame.width-80, height: 170)
-        fighterNameLabel.frame      = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
-        imputfighterName.frame      = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
-        passwordLabel.frame         = CGRect(x: 50, y: 430, width: self.view.frame.width, height: 20)
-        imputPassword.frame         = CGRect(x: 50, y: 450, width: self.view.frame.width, height: 20)
-        staySignedInLabel.frame     = CGRect(x: self.view.frame.width/2+10, y: 530, width: 200, height: 15)
-        staySignedButton.frame      = CGRect(x: self.view.frame.width/2-60, y: 520, width: 40, height: 10)
-        logInButton.frame           = CGRect(x: 50, y: 600, width: 300, height: 40)
-        forgetPasswordLabel.frame   = CGRect(x: 0, y: 670, width: self.view.frame.width, height: 20)
+        forgetPasswordLabel.isUserInteractionEnabled = true
+        forgetPasswordLabel.addGestureRecognizer(tap2)
+        
+        welcomeLabel.frame              = CGRect(x: 0, y: 50, width: self.view.frame.width, height: 20)
+        signUpLabel.frame               = CGRect(x: 0, y: 75, width: self.view.frame.width, height: 20)
+        underLine.frame                 = CGRect(x: 150, y: 100, width: self.view.frame.width-300, height: 2)
+        logoImage.frame                 = CGRect(x: 40, y: 150, width: self.view.frame.width-80, height: 170)
+        fighterNameLabel.frame          = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
+        imputfighterName.frame          = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
+        underLineImputfighterName.frame = CGRect(x: 50, y: 420, width: self.view.frame.width-100, height: 2)
+        passwordLabel.frame             = CGRect(x: 50, y: 450, width: self.view.frame.width, height: 20)
+        imputPassword.frame             = CGRect(x: 50, y: 470, width: self.view.frame.width, height: 20)
+        underLineImputPassword.frame    = CGRect(x: 50, y: 490, width: self.view.frame.width-100, height: 2)
+        staySignedInLabel.frame         = CGRect(x: self.view.frame.width/2+10, y: 530, width: 200, height: 15)
+        staySignedButton.frame          = CGRect(x: self.view.frame.width/2-60, y: 520, width: 40, height: 10)
+        logInButton.frame               = CGRect(x: 50, y: 600, width: 300, height: 40)
+        forgetPasswordLabel.frame       = CGRect(x: 0, y: 670, width: self.view.frame.width, height: 20)
 //        signUpLabel.toggleUnderline(NSUnderlineStyle.single)
     }
     
@@ -84,15 +95,21 @@ class LoginView: UIViewController {
         
         let text            = NSLocalizedString("Sign Up Here", comment: "")
         var label           = UILabel()
-//        label.text          = text
+        label.text          = text
         label.textAlignment = .center
         label.textColor     = UIColor(red: 217/255, green: 0/255, blue: 154/255, alpha: 1)
         label.font          = UIFont(name: "Lato-Regular", size: 18)
-        
-        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
-        let underlineAttributedString = NSAttributedString(string: text, attributes: underlineAttribute)
-        label.attributedText = underlineAttributedString
+//
+//        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+//        let underlineAttributedString = NSAttributedString(string: text, attributes: underlineAttribute)
+//        label.attributedText = underlineAttributedString
         return label
+    }()
+    
+    let underLine : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 217/255, green: 0/255, blue: 154/255, alpha: 1)
+        return view
     }()
     
     
@@ -113,16 +130,22 @@ class LoginView: UIViewController {
     
     let imputfighterName : UITextField = {
         let text = UITextField()
-        text.placeholder                = "Enter Fighter Name"
+        text.placeholder                = ""
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
         text.keyboardType               = UIKeyboardType.alphabet
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        let colorText = NSAttributedString(string: "Enter your mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         return text
+    }()
+    
+    let underLineImputfighterName : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let  passwordLabel : UILabel = {
@@ -134,18 +157,24 @@ class LoginView: UIViewController {
         return label
     }()
     
+    
     let imputPassword : UITextField = {
         let text = UITextField()
-        text.placeholder                = "Enter your Password"
+        text.placeholder                = ""
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
         text.keyboardType               = UIKeyboardType.alphabet
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        let colorText = NSAttributedString(string: "Enter your Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         return text
+    }()
+    let underLineImputPassword : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let  staySignedInLabel : UILabel = {
@@ -194,5 +223,69 @@ class LoginView: UIViewController {
     
     @objc func SingUp() {
     self.navigationController?.pushViewController(SingUpName(), animated: true)
+    }
+    
+    
+    @objc func rememberPasword() {
+
+//        let colorText = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+//        text.attributedText = colorText
+        
+        let attributedString = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+        
+        
+        let alert = UIAlertController(
+            title: "Forgot your Password?",
+            message: "Please,Type your email for resetPassword",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alert.accessibilityAttributedLabel = attributedString
+ 
+        
+        alert.addTextField { (text ) in
+            text.keyboardAppearance = UIKeyboardAppearance.dark
+            text.placeholder = "@"
+            
+        }
+        
+        
+        alert.addAction(UIAlertAction(title: "Reset Password", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+//        UIAlertController * alert = [UIAlertController
+//            alertControllerWithTitle:productName
+//            message:[NSString stringWithFormat:@"$ %ld",(long)producPrice]
+//            preferredStyle:UIAlertControllerStyleAlert];
+//
+//        [alert addTextFieldWithConfigurationHandler:^(UITextField * textField) {
+//            textField.keyboardAppearance = UIKeyboardAppearanceDark;
+//            textField.keyboardType = UIKeyboardTypeNumberPad;
+//            textField.placeholder = @"1";
+//            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//            textField.borderStyle = UITextBorderStyleNone;
+//            }];
+//
+//
+//        UIAlertAction* addButton = [UIAlertAction
+//            actionWithTitle:@"Add"
+//            style:UIAlertActionStyleCancel
+//            handler:^(UIAlertAction * action) {
+//            [self validateInfo:productName Price:producPrice Id:productId Image:productImage Alert:alert];
+//            }];
+//
+//        UIAlertAction* dismissButton = [UIAlertAction
+//            actionWithTitle:@"Cancel"
+//            style:UIAlertActionStyleDestructive
+//            handler:^(UIAlertAction * action) {
+//
+//            }];
+//
+//        [alert addAction:dismissButton];
+//        [alert addAction:addButton];
+//        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        
     }
 }

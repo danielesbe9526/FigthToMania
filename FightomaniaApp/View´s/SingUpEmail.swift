@@ -36,6 +36,7 @@ class SingUpEmail: UIViewController {
         self.view.addSubview(descriptionLabel)
         self.view.addSubview(emailLabel)
         self.view.addSubview(imputfEmail)
+        self.view.addSubview(underLineImputEmail)
         self.view.addSubview(continueButton)
 //        self.view.addSubview(backButton)
         
@@ -43,6 +44,7 @@ class SingUpEmail: UIViewController {
         descriptionLabel.frame      = CGRect(x: self.view.frame.width/2-100, y: 200, width:200 , height: 50)
         emailLabel.frame            = CGRect(x: 50, y: 350, width: self.view.frame.width, height: 20)
         imputfEmail.frame           = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
+        underLineImputEmail.frame   = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
         continueButton.frame        = CGRect(x: 50, y: 600, width: 300, height: 40)
 //        backButton.frame            = CGRect(x: self.view.frame.width/2-25, y: 500, width: 50, height: 50)
     }
@@ -81,7 +83,7 @@ class SingUpEmail: UIViewController {
     let imputfEmail : UITextField = {
         let text = UITextField()
 //        text.placeholder                = "Email"
-        let colorText = NSAttributedString(string: "Enter your mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -90,6 +92,12 @@ class SingUpEmail: UIViewController {
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
         return text
+    }()
+    
+    let underLineImputEmail : UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return view
     }()
     
     let continueButton : UIButton = {
