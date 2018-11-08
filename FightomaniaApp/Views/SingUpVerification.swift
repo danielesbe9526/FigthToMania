@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Firebase
 
 class SingUpVerification: UIViewController {
     
@@ -132,7 +133,26 @@ class SingUpVerification: UIViewController {
     
     @objc func nextView() {
         // Method called after Button LogIn pressed
-//        self.navigationController?.pushViewController(SingUpEmail(), animated: true)
+        let email = "TestIOS@gmail.com"
+        let password = "12345678"
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            // ...
+//            guard let user = authResult?.user else {
+//                return
+//            }
+            guard let _ = authResult?.user
+                else {
+                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
+                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+                        //            print("Cancel button")
+                    }
+                    alerController.addAction(cancel)
+                    self.navigationController!.present(alerController, animated: true, completion: nil)
+                    return
+            }
+        }
+   
     }
     
     

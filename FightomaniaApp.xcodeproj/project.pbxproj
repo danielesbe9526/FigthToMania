@@ -42,6 +42,10 @@
 		5CEA39592192044900A748B4 /* SingUpFighterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39582192044900A748B4 /* SingUpFighterName.swift */; };
 		5CEA395B219205FF00A748B4 /* SingUpPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395A219205FF00A748B4 /* SingUpPassword.swift */; };
 		5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395C219206C600A748B4 /* SingUpVerification.swift */; };
+		5CEA39612193B8BC00A748B4 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */; };
+		5CEA39632193B8F100A748B4 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */; };
+		5CEA39672193DB9700A748B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */; };
+		E72FF2D83D5776D368F27E77 /* Pods_FightomaniaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B72BBBE1CFADA12D56B1398 /* Pods-FightomaniaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FightomaniaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5CC60C01218F917D00178836 /* FightomaniaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightomaniaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC60C04218F917D00178836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC60C06218F917D00178836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +108,11 @@
 		5CEA39582192044900A748B4 /* SingUpFighterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpFighterName.swift; sourceTree = "<group>"; };
 		5CEA395A219205FF00A748B4 /* SingUpPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpPassword.swift; sourceTree = "<group>"; };
 		5CEA395C219206C600A748B4 /* SingUpVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVerification.swift; sourceTree = "<group>"; };
+		5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
+		5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FightomaniaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F5166147569C9F73F9C31BA /* Pods-FightomaniaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FightomaniaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72FF2D83D5776D368F27E77 /* Pods_FightomaniaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +141,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02681A7645E4EA291474D02E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B72BBBE1CFADA12D56B1398 /* Pods-FightomaniaApp.debug.xcconfig */,
+				8F5166147569C9F73F9C31BA /* Pods-FightomaniaApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4AC7245AD19334895FCE5F96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C695482218FB4E200289B4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +195,8 @@
 				5CC60C18218F918100178836 /* FightomaniaAppTests */,
 				5CC60C23218F918100178836 /* FightomaniaAppUITests */,
 				5CC60C02218F917D00178836 /* Products */,
+				02681A7645E4EA291474D02E /* Pods */,
+				4AC7245AD19334895FCE5F96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +213,7 @@
 		5CC60C03218F917D00178836 /* FightomaniaApp */ = {
 			isa = PBXGroup;
 			children = (
+				5CEA395F2193B89E00A748B4 /* customAlertView */,
 				5C695484218FB4F700289B4D /* ViewModels */,
 				5C695483218FB4ED00289B4D /* Models */,
 				5C695482218FB4E200289B4D /* Views */,
@@ -217,6 +248,7 @@
 		5CEA392C2191383E00A748B4 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */,
 				5CC60C0B218F918100178836 /* Assets.xcassets */,
 				5CEA392D2191386800A748B4 /* Fonts */,
 			);
@@ -249,6 +281,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5CEA395F2193B89E00A748B4 /* customAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */,
+				5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */,
+			);
+			path = customAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CC60C29218F918100178836 /* Build configuration list for PBXNativeTarget "FightomaniaApp" */;
 			buildPhases = (
+				67F519760BEC86CE69A6B35C /* [CP] Check Pods Manifest.lock */,
 				5CC60BFD218F917D00178836 /* Sources */,
 				5CC60BFE218F917D00178836 /* Frameworks */,
 				5CC60BFF218F917D00178836 /* Resources */,
+				16171176B0B8D826514EFC41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +403,7 @@
 				5CEA39492191389100A748B4 /* Lato-ThinItalic.ttf in Resources */,
 				5CEA39462191389100A748B4 /* Lato-Black.ttf in Resources */,
 				5CEA39482191389100A748B4 /* Lato-Semibold.ttf in Resources */,
+				5CEA39672193DB9700A748B4 /* GoogleService-Info.plist in Resources */,
 				5CC60C0F218F918100178836 /* LaunchScreen.storyboard in Resources */,
 				5CEA39452191389100A748B4 /* Lato-HairlineItalic.ttf in Resources */,
 				5CEA39432191389100A748B4 /* Lato-BlackItalic.ttf in Resources */,
@@ -394,6 +438,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16171176B0B8D826514EFC41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67F519760BEC86CE69A6B35C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FightomaniaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CC60BFD218F917D00178836 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -405,10 +500,12 @@
 				5CEA392B2191340200A748B4 /* SingUpEmail.swift in Sources */,
 				5CC60C34218F927000178836 /* LoginView.swift in Sources */,
 				5CEA39592192044900A748B4 /* SingUpFighterName.swift in Sources */,
+				5CEA39612193B8BC00A748B4 /* CustomAlertView.swift in Sources */,
 				5CEA39572191F90B00A748B4 /* SingUpBirthday.swift in Sources */,
 				5CC60C07218F917D00178836 /* ViewController.swift in Sources */,
 				5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */,
 				5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */,
+				5CEA39632193B8F100A748B4 /* CustomAlertViewDelegate.swift in Sources */,
 				5CEA39552191F24F00A748B4 /* SingUpName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +679,7 @@
 		};
 		5CC60C2A218F918100178836 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B72BBBE1CFADA12D56B1398 /* Pods-FightomaniaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -601,6 +699,7 @@
 		};
 		5CC60C2B218F918100178836 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5166147569C9F73F9C31BA /* Pods-FightomaniaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

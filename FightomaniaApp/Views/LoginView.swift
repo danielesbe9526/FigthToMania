@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginView: UIViewController {
     
@@ -99,10 +100,6 @@ class LoginView: UIViewController {
         label.textAlignment = .center
         label.textColor     = UIColor(red: 217/255, green: 0/255, blue: 154/255, alpha: 1)
         label.font          = UIFont(name: "Lato-Regular", size: 18)
-//
-//        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
-//        let underlineAttributedString = NSAttributedString(string: text, attributes: underlineAttribute)
-//        label.attributedText = underlineAttributedString
         return label
     }()
     
@@ -218,7 +215,29 @@ class LoginView: UIViewController {
     }()
     
    @objc func register() {
+    let email = "TestIOS@gmail.com"
+    let password = "12345678"
     
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+        // ...
+            if let _ = user?.user {
+                let alerController = UIAlertController(title: "Succes", message: ":D", preferredStyle: .alert)
+                let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+                    //            print("Cancel button")
+                }
+                alerController.addAction(cancel)
+                self.navigationController!.present(alerController, animated: true, completion: nil)
+                return
+            }else {
+                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
+                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+                        //            print("Cancel button")
+                    }
+                    alerController.addAction(cancel)
+                    self.navigationController!.present(alerController, animated: true, completion: nil)
+                    return
+            }
+        }
     }
     
     @objc func SingUp() {
@@ -227,32 +246,50 @@ class LoginView: UIViewController {
     
     
     @objc func rememberPasword() {
+        
+        
+        let modalViewController = CustomAlertView()
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
 
 //        let colorText = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
 //        text.attributedText = colorText
         
-        let attributedString = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
         
         
-        let alert = UIAlertController(
-            title: "Forgot your Password?",
-            message: "Please,Type your email for resetPassword",
-            preferredStyle: UIAlertController.Style.alert)
         
-        alert.accessibilityAttributedLabel = attributedString
- 
-        
-        alert.addTextField { (text ) in
-            text.keyboardAppearance = UIKeyboardAppearance.dark
-            text.placeholder = "@"
-            
-        }
-        
-        
-        alert.addAction(UIAlertAction(title: "Reset Password", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+//        let attributedString = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+//
+//
+//        let alert = UIAlertController(
+//            title: "Forgot your Password?",
+//            message: "Please,Type your email for resetPassword",
+//            preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.accessibilityAttributedLabel = attributedString
+//
+//
+//        alert.addTextField { (text ) in
+//            text.keyboardAppearance = UIKeyboardAppearance.dark
+//            text.placeholder = "@"
+//
+//        }
+//
+//
+//        alert.addAction(UIAlertAction(title: "Reset Password", style: UIAlertAction.Style.default, handler: nil))
+//
+//        self.present(alert, animated: true, completion: nil)
     
         
+//        let customAlert =  CustomAlertView()
+//
+//        customAlert.providesPresentationContextTransitionStyle = true
+//        customAlert.definesPresentationContext = true
+//        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+////        customAlert.delegate = self
+//        self.present(customAlert, animated: true, completion: nil)
     }
 }
+
+
