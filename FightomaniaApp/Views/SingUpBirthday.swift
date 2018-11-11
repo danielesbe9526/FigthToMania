@@ -9,10 +9,11 @@
 
 import UIKit
 
-class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
+class SingUpBirthday: UIViewController  {
   
-    let defaultColor : UIColor = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
-    let months = ["january","February","March","April","May","June","july","August","September","October","November","December"]
+    let defaultColor : UIColor  = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
+    let months                  =   ["january","February","March","April","May","June","july","August","September","October","November","December"]
+    var birthdayDate            = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +21,37 @@ class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         view.backgroundColor = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
         setUpView()
         self.navigationController?.navigationBar.tintColor = defaultColor
-        let birthdaypicker = UIPickerView()
-        birthdaypicker.dataSource = self
-        birthdaypicker.delegate = self
-        birthdaypicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.03769798801)
         
-  
-    
+        let datePicker = UIDatePicker()
+        datePicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.center = view.center
+        datePicker.setValue(defaultColor, forKeyPath: "textColor")
 
-        self.view.addSubview(birthdaypicker)
-        birthdaypicker.frame    = CGRect(x: 10, y: 300, width: self.view.frame.width-20, height: 100)
+        self.view.addSubview(datePicker)
+        datePicker .frame       = CGRect(x: 10, y: 300, width: self.view.frame.width-20, height: 100)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+
         
         let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(hideKeyboard)
     }
 
+    
+    @objc func datePickerValueChanged(_ sender: UIDatePicker){
+        
+        // Create date formatter
+        let dateFormatter: DateFormatter = DateFormatter()
+        
+        // Set date format
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        
+        // Apply date format
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+        birthdayDate = selectedDate
+    }
+    
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -119,9 +136,16 @@ class SingUpBirthday: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         return button
     }()
     
+    func getDateForPickerView(picker :  UIPickerView){
+  
+    }
+    
   
     @objc func nextView() {
-        // Method called after Button LogIn pressed
+
+        let viewModel = LoginViewModel()
+        viewModel.setDictionaryWhitStrings(whit: birthdayDate, andKey: 2)
+        
         self.navigationController?.pushViewController(SingUpFighterName(), animated: true)
     }
     

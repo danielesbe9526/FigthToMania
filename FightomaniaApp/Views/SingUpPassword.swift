@@ -109,7 +109,11 @@ class SingUpPassword: UIViewController {
     
     
     @objc func nextView() {
-        // Method called after Button LogIn pressed
+        guard let password = imputPassword.text else {return}
+
+        let viewModel = LoginViewModel()
+        viewModel.setDictionaryWhitStrings(whit: password, andKey: 4)
+        
         self.navigationController?.pushViewController(SingUpEmail(), animated: true)
         
     }

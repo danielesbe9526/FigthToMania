@@ -110,7 +110,11 @@ class SingUpFighterName: UIViewController {
     
     
     @objc func nextView() {
-        // Method called after Button LogIn pressed
+        guard let figtherName =  imputfName.text else {return}
+        
+        let viewModel = LoginViewModel()
+        viewModel.setDictionaryWhitStrings(whit: figtherName, andKey: 3)
+        
         self.navigationController?.pushViewController(SingUpPassword(), animated: true)
 
     }

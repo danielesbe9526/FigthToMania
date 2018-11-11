@@ -13,7 +13,6 @@ class SingUpName: UIViewController {
     let defaultColor : UIColor = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -158,13 +157,17 @@ class SingUpName: UIViewController {
     
     
     @objc func signUpAccept() {
-        // Method called after Button LogIn pressed
+
+        guard   let userName = imputfName.text,
+                let lastName = imputLastName.text
+        else {return}
+    
+        let viewModel = LoginViewModel()
+    
+        viewModel.setDictionaryWhitStrings(whit: "\(userName) \(lastName)", andKey: 1)
+        
     self.navigationController?.pushViewController(SingUpBirthday(), animated: true)
     }
-    
-    //    @objc func goBack() {
-    //        present(LoginView(), animated: true)
-    //    }
     
 }
 

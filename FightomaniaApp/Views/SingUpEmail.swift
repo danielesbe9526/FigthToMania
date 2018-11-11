@@ -128,13 +128,13 @@ class SingUpEmail: UIViewController {
 //    }()
     
     @objc func register() {
+        guard let email = imputfEmail.text else {return}
+        
+        let viewModel = LoginViewModel()
+        viewModel.setDictionaryWhitStrings(whit: email, andKey: 5)
+        
         self.navigationController?.pushViewController(SingUpVerification(), animated: true)
 
-        // Method called after Button LogIn pressed
     }
-    
-//    @objc func goBack() {
-//        present(LoginView(), animated: true)
-//    }
     
 }

@@ -131,27 +131,43 @@ class SingUpVerification: UIViewController {
     }()
     
     
-    @objc func nextView() {
-        // Method called after Button LogIn pressed
-        let email = "TestIOS@gmail.com"
-        let password = "12345678"
-        
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            // ...
-//            guard let user = authResult?.user else {
-//                return
-//            }
-            guard let _ = authResult?.user
-                else {
-                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
-                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-                        //            print("Cancel button")
-                    }
-                    alerController.addAction(cancel)
-                    self.navigationController!.present(alerController, animated: true, completion: nil)
-                    return
-            }
+    func showAlertView(tittle : String , message : String){
+        let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
+        let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
         }
+        alerController.addAction(cancel)
+        self.navigationController!.present(alerController, animated: true, completion: nil)
+        
+    }
+    
+    @objc func nextView() {
+        
+//        let model = LoginModel()
+//        model.register()
+        
+                let viewModel =  LoginViewModel()
+                viewModel.getUserModel()
+        
+        // Method called after Button LogIn pressed
+//        let email = "TestIOS@gmail.com"
+//        let password = "1234567"
+//
+//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+//
+//
+//            guard let _ = authResult?.user
+//                else {
+//
+//                    if let error = error {
+//                        let alerController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+//                        let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+//                        }
+//                        alerController.addAction(cancel)
+//                        self.navigationController!.present(alerController, animated: true, completion: nil)
+//                    }
+//                    return
+//            }
+//        }
    
     }
     

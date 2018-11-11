@@ -45,6 +45,7 @@
 		5CEA39612193B8BC00A748B4 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */; };
 		5CEA39632193B8F100A748B4 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */; };
 		5CEA39672193DB9700A748B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */; };
+		5CEA39692194DB2B00A748B4 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39682194DB2B00A748B4 /* user.swift */; };
 		E72FF2D83D5776D368F27E77 /* Pods_FightomaniaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
 		5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CEA39682194DB2B00A748B4 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FightomaniaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F5166147569C9F73F9C31BA /* Pods-FightomaniaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FightomaniaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5CC60C38218F930F00178836 /* LoginModel.swift */,
+				5CEA39682194DB2B00A748B4 /* user.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,8 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				5CEA395F2193B89E00A748B4 /* customAlertView */,
-				5C695484218FB4F700289B4D /* ViewModels */,
 				5C695483218FB4ED00289B4D /* Models */,
+				5C695484218FB4F700289B4D /* ViewModels */,
 				5C695482218FB4E200289B4D /* Views */,
 				5CEA392C2191383E00A748B4 /* resources */,
 				5CC60C06218F917D00178836 /* ViewController.swift */,
@@ -450,6 +453,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -458,6 +462,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +503,7 @@
 				5CC60C39218F930F00178836 /* LoginModel.swift in Sources */,
 				5CC60C37218F92F000178836 /* LoginViewModel.swift in Sources */,
 				5CEA392B2191340200A748B4 /* SingUpEmail.swift in Sources */,
+				5CEA39692194DB2B00A748B4 /* user.swift in Sources */,
 				5CC60C34218F927000178836 /* LoginView.swift in Sources */,
 				5CEA39592192044900A748B4 /* SingUpFighterName.swift in Sources */,
 				5CEA39612193B8BC00A748B4 /* CustomAlertView.swift in Sources */,

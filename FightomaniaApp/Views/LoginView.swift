@@ -78,7 +78,6 @@ class LoginView: UIViewController {
         staySignedButton.frame          = CGRect(x: self.view.frame.width/2-60, y: 520, width: 40, height: 10)
         logInButton.frame               = CGRect(x: 50, y: 600, width: 300, height: 40)
         forgetPasswordLabel.frame       = CGRect(x: 0, y: 670, width: self.view.frame.width, height: 20)
-//        signUpLabel.toggleUnderline(NSUnderlineStyle.single)
     }
     
     let  welcomeLabel : UILabel = {
@@ -200,7 +199,7 @@ class LoginView: UIViewController {
         button.setTitle(text, for: .normal)
         button.titleLabel?.font     =  UIFont(name: "Lato-Regular", size: 12)
 
-        button.addTarget(self, action: #selector(register), for: .touchUpInside)
+        button.addTarget(self, action: #selector(logInButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -214,28 +213,39 @@ class LoginView: UIViewController {
         return label
     }()
     
-   @objc func register() {
-    let email = "TestIOS@gmail.com"
-    let password = "12345678"
+   @objc func logInButtonAction() {
+    
+   guard let email = imputfighterName.text,
+    let password = imputPassword.text else {
+        let message = NSLocalizedString("please type both spaces, (email and password)", comment: "")
+        self.showAlert(With: "error", and: message)
+        return
+        
+    }
     
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
         // ...
             if let _ = user?.user {
-                let alerController = UIAlertController(title: "Succes", message: ":D", preferredStyle: .alert)
-                let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-                    //            print("Cancel button")
-                }
-                alerController.addAction(cancel)
-                self.navigationController!.present(alerController, animated: true, completion: nil)
-                return
+//                let alerController = UIAlertController(title: "Succes", message: ":D", preferredStyle: .alert)
+//                let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+//                    //            print("Cancel button")
+//                }
+//                alerController.addAction(cancel)
+//                self.navigationController!.present(alerController, animated: true, completion: nil)
+//                return
+                
+                self.showAlert(With: "succes", and: ":D")
+                
+                
             }else {
-                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
-                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-                        //            print("Cancel button")
-                    }
-                    alerController.addAction(cancel)
-                    self.navigationController!.present(alerController, animated: true, completion: nil)
-                    return
+//                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
+//                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
+//                        //            print("Cancel button")
+//                    }
+//                    alerController.addAction(cancel)
+//                    self.navigationController!.present(alerController, animated: true, completion: nil)
+//                    return
+                self.showAlert(With: "error", and: error!.localizedDescription)
             }
         }
     }
@@ -244,6 +254,21 @@ class LoginView: UIViewController {
     self.navigationController?.pushViewController(SingUpName(), animated: true)
     }
     
+    func showAlert(With tittle : String , and message: String){
+       
+        if (self.navigationController != nil) {
+            let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
+            let cancel  = UIAlertAction(title: "Cancel", style: .default) { (action) -> Void in
+                //            print("Cancel button")
+            }
+            alerController.addAction(cancel)
+            self.navigationController?.present(alerController, animated: true, completion: nil)
+        }
+        
+        
+        return
+        
+    }
     
     @objc func rememberPasword() {
         
@@ -251,44 +276,6 @@ class LoginView: UIViewController {
         let modalViewController = CustomAlertView()
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
-
-//        let colorText = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-//        text.attributedText = colorText
-        
-        
-        
-        
-//        let attributedString = NSAttributedString(string: "Forgot your Password?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
-//
-//
-//        let alert = UIAlertController(
-//            title: "Forgot your Password?",
-//            message: "Please,Type your email for resetPassword",
-//            preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.accessibilityAttributedLabel = attributedString
-//
-//
-//        alert.addTextField { (text ) in
-//            text.keyboardAppearance = UIKeyboardAppearance.dark
-//            text.placeholder = "@"
-//
-//        }
-//
-//
-//        alert.addAction(UIAlertAction(title: "Reset Password", style: UIAlertAction.Style.default, handler: nil))
-//
-//        self.present(alert, animated: true, completion: nil)
-    
-        
-//        let customAlert =  CustomAlertView()
-//
-//        customAlert.providesPresentationContextTransitionStyle = true
-//        customAlert.definesPresentationContext = true
-//        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-//        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-////        customAlert.delegate = self
-//        self.present(customAlert, animated: true, completion: nil)
     }
 }
 
