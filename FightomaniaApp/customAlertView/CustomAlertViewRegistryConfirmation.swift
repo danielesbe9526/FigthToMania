@@ -45,7 +45,7 @@ class CustomAlertViewRegistryConfirmation: UIViewController {
         
         tittle.frame                = CGRect(x: 20, y: 10, width: alertView.frame.width-40, height: 30)
         descriptionLabel.frame      = CGRect(x: alertView.frame.width/2-100, y: 50, width: 200, height: 30)
-        imageIcon.frame             = CGRect(x: alertView.frame.width/2-100, y: 100, width:200, height: 200)
+        imageIcon.frame             = CGRect(x: alertView.frame.width/2-100, y: 100, width:200, height: 214)
         continueButton.frame        = CGRect(x: 20, y: 310, width: alertView.frame.width-50, height: 40)
         
     }
@@ -75,13 +75,12 @@ class CustomAlertViewRegistryConfirmation: UIViewController {
         return label
     }()
     
-    let imageIcon : UIView = {
-        let image       = UIView()
-        image.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-//        image.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: <#T##String#>))
+    
+    let imageIcon : UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "login_pillow_header.jpg")
         return image
     }()
-    
     
     let continueButton : UIButton = {
         let purpleColor : UIColor = UIColor(red: 217/255, green: 0/255, blue: 10/255, alpha: 1)
