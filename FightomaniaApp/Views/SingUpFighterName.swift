@@ -42,6 +42,7 @@ class SingUpFighterName: UIViewController {
         descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-100, y: 180, width:200 , height: 50)
         nameLabel.frame         = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
         imputfName.frame        = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
+        imputfName.textColor    = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputfName.frame = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
@@ -78,7 +79,7 @@ class SingUpFighterName: UIViewController {
     
     let imputfName : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -108,14 +109,39 @@ class SingUpFighterName: UIViewController {
         return button
     }()
     
+    func showAlertView(tittle: String, message : String) {
+        let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
+        let cancel  = UIAlertAction(title: "Cancel", style: .default) { (action) -> Void in
+        }
+        alerController.addAction(cancel)
+        self.navigationController?.present(alerController, animated: true, completion: nil)
+    }
+    
     
     @objc func nextView() {
-        guard let figtherName =  imputfName.text else {return}
         
-        let viewModel = LoginViewModel()
-        viewModel.setDictionaryWhitStrings(whit: figtherName, andKey: 3)
         
-        self.navigationController?.pushViewController(SingUpPassword(), animated: true)
+        guard let figtherName =  imputfName.text else {
+            return
+            
+        }
+        
+        if ( figtherName.count > 2 && figtherName.count < 15) {
+            
+           
+            let viewModel = LoginViewModel()
+            
+            viewModel.setDictionaryWhitStrings(whit: figtherName, andKey: 3)
+            
+            self.navigationController?.pushViewController(SingUpPassword(), animated: true)
+        }
+            //TODO : - Validate special characters
+        else {
+            showAlertView(tittle: "error", message: "Invalid string ,the name of fighter, must be more than 2 characters and less than 15")
+        }
+        
+        
+        
 
     }
     

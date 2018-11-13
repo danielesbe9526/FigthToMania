@@ -12,7 +12,6 @@ import UIKit
 class SingUpBirthday: UIViewController  {
   
     let defaultColor : UIColor  = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
-    let months                  =   ["january","February","March","April","May","June","july","August","September","October","November","December"]
     var birthdayDate            = String()
     
     override func viewDidLoad() {
@@ -23,16 +22,20 @@ class SingUpBirthday: UIViewController  {
         self.navigationController?.navigationBar.tintColor = defaultColor
         
         let datePicker = UIDatePicker()
-        datePicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        datePicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         datePicker.timeZone = NSTimeZone.local
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.center = view.center
-        datePicker.setValue(defaultColor, forKeyPath: "textColor")
-
+        datePicker.setValue(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forKeyPath: "textColor")
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -100, to: Date())
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -15, to: Date())
+//        guard let last16YearsAgo = Calendar.current.date(byAdding: .year, value: -16, to: Date()) else {return}
+//        datePicker.date = last16YearsAgo
+        
         self.view.addSubview(datePicker)
         datePicker .frame       = CGRect(x: 10, y: 300, width: self.view.frame.width-20, height: 100)
         datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
-
+        
         
         let hideKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(hideKeyboard)
@@ -45,11 +48,13 @@ class SingUpBirthday: UIViewController  {
         let dateFormatter: DateFormatter = DateFormatter()
         
         // Set date format
-        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
         birthdayDate = selectedDate
+        continueButton.isEnabled = true
+        continueButton.isHidden = false
     }
     
     
@@ -65,55 +70,15 @@ class SingUpBirthday: UIViewController  {
 
         tittle.frame            = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
+        continueButton.isEnabled = false
+        continueButton.isHidden = true
+
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return 12
-        } else  if component == 1 {
-            return 31
-        }else {
-            return 80
-        }
-    }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        var year = 1950
-//
-//        if component == 0 {
-//            return months[row]
-//        } else if component == 1{
-//            return "\(row + 1)"
-//        }else {
-//            year = year + row
-//            return "\(year)"
-//        }
-//    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        var year = 1950
-        
-        if component == 0 {
-            let attributedString = NSAttributedString(string: months[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-            return attributedString
-            
-        } else if component == 1{
-            let attributedString = NSAttributedString(string: "\(row + 1)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-            return attributedString
-           
-        }else {
-            year = year + row
-            let attributedString = NSAttributedString(string: "\(year)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-            return attributedString
-        
-        }
-    }
     
     let  tittle : UILabel = {
-        let text            = NSLocalizedString("When is your birthday?", comment: "")
+        let text            = NSLocalizedString("When is you birthday?", comment: "")
         var label           = UILabel()
         label.text          = text
         label.textAlignment = .center
@@ -136,11 +101,6 @@ class SingUpBirthday: UIViewController  {
         return button
     }()
     
-    func getDateForPickerView(picker :  UIPickerView){
-  
-    }
-    
-  
     @objc func nextView() {
 
         let viewModel = LoginViewModel()

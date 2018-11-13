@@ -38,15 +38,14 @@ class SingUpEmail: UIViewController {
         self.view.addSubview(imputfEmail)
         self.view.addSubview(underLineImputEmail)
         self.view.addSubview(continueButton)
-//        self.view.addSubview(backButton)
         
         emailAddress.frame          = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
         descriptionLabel.frame      = CGRect(x: self.view.frame.width/2-100, y: 200, width:200 , height: 50)
         emailLabel.frame            = CGRect(x: 50, y: 350, width: self.view.frame.width, height: 20)
         imputfEmail.frame           = CGRect(x: 50, y: 380, width: self.view.frame.width, height: 20)
+        imputfEmail.textColor       = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputEmail.frame   = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
         continueButton.frame        = CGRect(x: 50, y: 600, width: 300, height: 40)
-//        backButton.frame            = CGRect(x: self.view.frame.width/2-25, y: 500, width: 50, height: 50)
     }
     
     let  emailAddress : UILabel = {
@@ -67,7 +66,7 @@ class SingUpEmail: UIViewController {
         label.textAlignment = .center
         label.textColor     = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6100706336)
         label.font          = UIFont(name: "Lato-Regular", size: 12)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
 
@@ -82,8 +81,7 @@ class SingUpEmail: UIViewController {
     
     let imputfEmail : UITextField = {
         let text = UITextField()
-//        text.placeholder                = "Email"
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -101,7 +99,7 @@ class SingUpEmail: UIViewController {
     }()
     
     let continueButton : UIButton = {
-        let text = NSLocalizedString("Log In", comment: "")
+        let text = NSLocalizedString("Log in", comment: "")
         let button = UIButton()
         button.backgroundColor      = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         button.layer.cornerRadius   = 20
@@ -113,28 +111,43 @@ class SingUpEmail: UIViewController {
         button.addTarget(self, action: #selector(register), for: .touchUpInside)
         return button
     }()
+
+    func showAlertView(tittle: String, message : String) {
+        let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
+        let cancel  = UIAlertAction(title: "Cancel", style: .default) { (action) -> Void in
+        }
+        alerController.addAction(cancel)
+        self.navigationController?.present(alerController, animated: true, completion: nil)
+    }
     
-//    let backButton : UIButton = {
-//        let text = NSLocalizedString("←", comment: "")
-//        let button = UIButton()
-//        button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-//        button.layer.cornerRadius = 25
-//        button.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        button.layer.borderWidth = 1.0
-//        button.clipsToBounds = true
-//        button.setTitle(text, for: .normal)
-//        button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-//        return button
-//    }()
     
     @objc func register() {
         guard let email = imputfEmail.text else {return}
         
-        let viewModel = LoginViewModel()
-        viewModel.setDictionaryWhitStrings(whit: email, andKey: 5)
-        
-        self.navigationController?.pushViewController(SingUpVerification(), animated: true)
+        if ( email.count > 10 && email.count < 50 ) {
+            let viewModel = LoginViewModel()
+            viewModel.setDictionaryWhitStrings(whit: email, andKey: 5)
+            
+            self.navigationController?.pushViewController(SingUpVerification(), animated: true)
 
+            let modalViewController = CustomAlertViewRegistryConfirmation()
+            modalViewController.modalPresentationStyle = .overCurrentContext
+            present(modalViewController, animated: true, completion: nil)
+          
+        
+            
+            
+          
+        }
+            //TODO : - Validate special characters
+        else {
+            showAlertView(tittle: "error", message: "Invalid string , the email, must be more than 10 characters and less than 50")
+        }
+     
+    }
+    
+    func presentNextViewController () {
+        self.navigationController?.pushViewController(SingUpVerification(), animated: true)
     }
     
 }

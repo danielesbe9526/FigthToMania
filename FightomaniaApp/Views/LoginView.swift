@@ -53,8 +53,6 @@ class LoginView: UIViewController {
         self.view.addSubview(passwordLabel)
         self.view.addSubview(imputPassword)
         self.view.addSubview(underLineImputPassword)
-        self.view.addSubview(staySignedInLabel)
-        self.view.addSubview(staySignedButton)
         self.view.addSubview(logInButton)
         self.view.addSubview(forgetPasswordLabel)
         
@@ -70,12 +68,13 @@ class LoginView: UIViewController {
         logoImage.frame                 = CGRect(x: 40, y: 150, width: self.view.frame.width-80, height: 170)
         fighterNameLabel.frame          = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
         imputfighterName.frame          = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
+        imputfighterName.textColor      = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputfighterName.frame = CGRect(x: 50, y: 420, width: self.view.frame.width-100, height: 2)
         passwordLabel.frame             = CGRect(x: 50, y: 450, width: self.view.frame.width, height: 20)
         imputPassword.frame             = CGRect(x: 50, y: 470, width: self.view.frame.width, height: 20)
+        imputPassword.textColor         = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        imputPassword.isSecureTextEntry = true
         underLineImputPassword.frame    = CGRect(x: 50, y: 490, width: self.view.frame.width-100, height: 2)
-        staySignedInLabel.frame         = CGRect(x: self.view.frame.width/2+10, y: 530, width: 200, height: 15)
-        staySignedButton.frame          = CGRect(x: self.view.frame.width/2-60, y: 520, width: 40, height: 10)
         logInButton.frame               = CGRect(x: 50, y: 600, width: 300, height: 40)
         forgetPasswordLabel.frame       = CGRect(x: 0, y: 670, width: self.view.frame.width, height: 20)
     }
@@ -93,7 +92,7 @@ class LoginView: UIViewController {
     
     let  signUpLabel : UILabel = {
         
-        let text            = NSLocalizedString("Sign Up Here", comment: "")
+        let text            = NSLocalizedString("Sign up here", comment: "")
         var label           = UILabel()
         label.text          = text
         label.textAlignment = .center
@@ -133,7 +132,7 @@ class LoginView: UIViewController {
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         return text
     }()
@@ -163,7 +162,7 @@ class LoginView: UIViewController {
         text.clearButtonMode            = UITextField.ViewMode.whileEditing
         text.contentVerticalAlignment   = UIControl.ContentVerticalAlignment.center
         text.autocapitalizationType     = .none
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         return text
     }()
@@ -173,23 +172,8 @@ class LoginView: UIViewController {
         return view
     }()
     
-    let  staySignedInLabel : UILabel = {
-        let text        = NSLocalizedString("Stay Signed In", comment: "")
-        var label       = UILabel()
-        label.text      = text
-        label.textColor  = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
-        label.font      = UIFont(name: "Lato-Regular", size: 12)
-        return label
-    }()
-    
-    let staySignedButton : UISwitch = {
-       let signedSwitch            = UISwitch()
-        signedSwitch.onTintColor    = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-        return signedSwitch
-    }()
-    
     let logInButton : UIButton = {
-        let text = NSLocalizedString("Log In", comment: "")
+        let text = NSLocalizedString("Log in", comment: "")
         let button = UIButton()
         button.backgroundColor      = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         button.layer.cornerRadius   = 20
@@ -204,7 +188,7 @@ class LoginView: UIViewController {
     }()
     
     let  forgetPasswordLabel : UILabel = {
-        let text = NSLocalizedString("I don´t remember my password", comment: "")
+        let text = NSLocalizedString("I don't remember my password", comment: "")
         var label = UILabel()
         label.text              = text
         label.textColor          = UIColor(red: 85/255, green: 204/255, blue: 255/255, alpha: 1)
@@ -224,28 +208,15 @@ class LoginView: UIViewController {
     }
     
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-        // ...
+
             if let _ = user?.user {
-//                let alerController = UIAlertController(title: "Succes", message: ":D", preferredStyle: .alert)
-//                let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-//                    //            print("Cancel button")
-//                }
-//                alerController.addAction(cancel)
-//                self.navigationController!.present(alerController, animated: true, completion: nil)
-//                return
                 
                 self.showAlert(With: "succes", and: ":D")
-                
-                
-            }else {
-//                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
-//                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-//                        //            print("Cancel button")
-//                    }
-//                    alerController.addAction(cancel)
-//                    self.navigationController!.present(alerController, animated: true, completion: nil)
-//                    return
+            
+            } else {
+
                 self.showAlert(With: "error", and: error!.localizedDescription)
+                
             }
         }
     }
@@ -264,15 +235,10 @@ class LoginView: UIViewController {
             alerController.addAction(cancel)
             self.navigationController?.present(alerController, animated: true, completion: nil)
         }
-        
-        
         return
-        
     }
     
     @objc func rememberPasword() {
-        
-        
         let modalViewController = CustomAlertView()
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)

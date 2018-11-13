@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C970511219889D800746F72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C97050F219889D800746F72 /* Localizable.strings */; };
+		5C970514219A328400746F72 /* CustomAlertViewRegistryConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C970513219A328400746F72 /* CustomAlertViewRegistryConfirmation.swift */; };
 		5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C04218F917D00178836 /* AppDelegate.swift */; };
 		5CC60C07218F917D00178836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC60C06218F917D00178836 /* ViewController.swift */; };
 		5CC60C0A218F917D00178836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC60C08218F917D00178836 /* Main.storyboard */; };
@@ -43,7 +45,6 @@
 		5CEA395B219205FF00A748B4 /* SingUpPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395A219205FF00A748B4 /* SingUpPassword.swift */; };
 		5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA395C219206C600A748B4 /* SingUpVerification.swift */; };
 		5CEA39612193B8BC00A748B4 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */; };
-		5CEA39632193B8F100A748B4 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */; };
 		5CEA39672193DB9700A748B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */; };
 		5CEA39692194DB2B00A748B4 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA39682194DB2B00A748B4 /* user.swift */; };
 		E72FF2D83D5776D368F27E77 /* Pods_FightomaniaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */; };
@@ -68,6 +69,11 @@
 
 /* Begin PBXFileReference section */
 		1B72BBBE1CFADA12D56B1398 /* Pods-FightomaniaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FightomaniaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FightomaniaApp/Pods-FightomaniaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5C97050D2198894F00746F72 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		5C97050E2198895000746F72 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5C970510219889D800746F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = FightomaniaApp/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5C970512219889F500746F72 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "FightomaniaApp/es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5C970513219A328400746F72 /* CustomAlertViewRegistryConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewRegistryConfirmation.swift; sourceTree = "<group>"; };
 		5CC60C01218F917D00178836 /* FightomaniaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FightomaniaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC60C04218F917D00178836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC60C06218F917D00178836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +116,6 @@
 		5CEA395A219205FF00A748B4 /* SingUpPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpPassword.swift; sourceTree = "<group>"; };
 		5CEA395C219206C600A748B4 /* SingUpVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVerification.swift; sourceTree = "<group>"; };
 		5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
-		5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
 		5CEA39662193DB9700A748B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CEA39682194DB2B00A748B4 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		8AD01511B1997A234826D903 /* Pods_FightomaniaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FightomaniaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +199,7 @@
 		5CC60BF8218F917D00178836 = {
 			isa = PBXGroup;
 			children = (
+				5C97050F219889D800746F72 /* Localizable.strings */,
 				5CC60C03218F917D00178836 /* FightomaniaApp */,
 				5CC60C18218F918100178836 /* FightomaniaAppTests */,
 				5CC60C23218F918100178836 /* FightomaniaAppUITests */,
@@ -288,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				5CEA39602193B8BC00A748B4 /* CustomAlertView.swift */,
-				5CEA39622193B8F100A748B4 /* CustomAlertViewDelegate.swift */,
+				5C970513219A328400746F72 /* CustomAlertViewRegistryConfirmation.swift */,
 			);
 			path = customAlertView;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 5CC60BF8218F917D00178836;
 			productRefGroup = 5CC60C02218F917D00178836 /* Products */;
@@ -412,6 +419,7 @@
 				5CEA39432191389100A748B4 /* Lato-BlackItalic.ttf in Resources */,
 				5CEA39412191389100A748B4 /* Lato-MediumItalic.ttf in Resources */,
 				5CEA394B2191389100A748B4 /* Lato-Hairline.ttf in Resources */,
+				5C970511219889D800746F72 /* Localizable.strings in Resources */,
 				5CEA39512191389100A748B4 /* Lato-Italic.ttf in Resources */,
 				5CC60C0C218F918100178836 /* Assets.xcassets in Resources */,
 				5CEA394D2191389100A748B4 /* SIL Open Font License.txt in Resources */,
@@ -511,7 +519,7 @@
 				5CC60C07218F917D00178836 /* ViewController.swift in Sources */,
 				5CEA395D219206C600A748B4 /* SingUpVerification.swift in Sources */,
 				5CC60C05218F917D00178836 /* AppDelegate.swift in Sources */,
-				5CEA39632193B8F100A748B4 /* CustomAlertViewDelegate.swift in Sources */,
+				5C970514219A328400746F72 /* CustomAlertViewRegistryConfirmation.swift in Sources */,
 				5CEA39552191F24F00A748B4 /* SingUpName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,10 +556,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5C97050F219889D800746F72 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C970510219889D800746F72 /* Base */,
+				5C970512219889F500746F72 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5CC60C08218F917D00178836 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5CC60C09218F917D00178836 /* Base */,
+				5C97050D2198894F00746F72 /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -560,6 +578,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5CC60C0E218F918100178836 /* Base */,
+				5C97050E2198895000746F72 /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -571,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -632,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

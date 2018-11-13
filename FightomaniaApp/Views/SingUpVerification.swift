@@ -34,46 +34,35 @@ class SingUpVerification: UIViewController {
     func setUpView()  {
         
         self.view.addSubview(tittle)
-        self.view.addSubview(tittle2)
         self.view.addSubview(descriptionLabel)
-        self.view.addSubview(imput)
+        self.view.addSubview(imputFightCry)
         self.view.addSubview(underLine)
         self.view.addSubview(descriptionInput)
         self.view.addSubview(continueButton)
         
-        tittle.frame            = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
-        tittle2.frame           = CGRect(x: self.view.frame.width/2-65, y: 170, width: 130, height: 50)
-        descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-75, y: 250, width:150 , height: 50)
-        imput.frame             = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
+        tittle.frame            = CGRect(x: 50, y: 150, width: self.view.frame.width-100, height: 60)
+        descriptionLabel.frame  = CGRect(x: self.view.frame.width/2-125, y: 250, width:250 , height: 50)
+        imputFightCry.frame     = CGRect(x: 50, y: 350, width: self.view.frame.width , height: 20)
+        imputFightCry.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLine.frame         = CGRect(x: 50, y: 370, width: self.view.frame.width-100, height: 2)
         descriptionInput.frame  = CGRect(x: self.view.frame.width/2-125, y: 380, width: 250, height: 50)
         continueButton.frame    = CGRect(x: 50, y: 600, width: 300, height: 40)
     }
     
     let  tittle : UILabel = {
-        let text            = NSLocalizedString("Perfect!", comment: "")
+        let text            = NSLocalizedString("Perfect! you are a fighter in Fightomania", comment: "")
         var label           = UILabel()
         label.text          = text
         label.textAlignment = .center
         label.textColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.font          = UIFont(name: "Lato-Regular", size: 18)
+        label.numberOfLines = 3
         return label
     }()
     
-    let  tittle2 : UILabel = {
-        let text            = NSLocalizedString("You are a fighter in Fightomania", comment: "")
-        var label           = UILabel()
-        label.text          = text
-        label.textAlignment = .center
-        label.textColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        label.font          = UIFont(name: "Lato-Regular", size: 18)
-        label.numberOfLines = 2
-
-        return label
-    }()
     
     let  descriptionLabel : UILabel = {
-        let text            = NSLocalizedString("now pick up a Battle Cry for provoke your opponents", comment: "")
+        let text            = NSLocalizedString("Now pick up a Battle Cry for provoke your opponents", comment: "")
         var label           = UILabel()
         label.text          = text
         label.textAlignment = .center
@@ -85,9 +74,9 @@ class SingUpVerification: UIViewController {
     
 
     
-    let imput : UITextField = {
+    let imputFightCry : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -105,7 +94,7 @@ class SingUpVerification: UIViewController {
     }()
     
     let  descriptionInput : UILabel = {
-        let text            = NSLocalizedString("Need inspiration? Ypu can complete later in profile section", comment: "")
+        let text            = NSLocalizedString("Need inspiration? You can complete later in profile section", comment: "")
         var label           = UILabel()
         label.text          = text
         label.textAlignment = .center
@@ -136,40 +125,24 @@ class SingUpVerification: UIViewController {
         let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
         }
         alerController.addAction(cancel)
-        self.navigationController!.present(alerController, animated: true, completion: nil)
-        
+        self.navigationController?.present(alerController, animated: true, completion: nil)
     }
     
     @objc func nextView() {
         
-//        let model = LoginModel()
-//        model.register()
+        guard let fightCry = imputFightCry.text else {
+            return
+            
+        }
         
-                let viewModel =  LoginViewModel()
-                viewModel.getUserModel()
-        
-        // Method called after Button LogIn pressed
-//        let email = "TestIOS@gmail.com"
-//        let password = "1234567"
-//
-//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-//
-//
-//            guard let _ = authResult?.user
-//                else {
-//
-//                    if let error = error {
-//                        let alerController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-//                        let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-//                        }
-//                        alerController.addAction(cancel)
-//                        self.navigationController!.present(alerController, animated: true, completion: nil)
-//                    }
-//                    return
-//            }
-//        }
-   
+        if (  fightCry.count > 20 ) {
+            showAlertView(tittle: "error", message: "Invalid string , the email, must be more than 10 characters and less than 50")
+        }
+        else {
+            let viewModel =  LoginViewModel()
+            viewModel.getUserModel()
+            
+           showAlertView(tittle: "ok", message: "successFull 2")
+        }
     }
-    
-    
 }

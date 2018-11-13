@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum error {
+    case numberOfCharacters;
+    case invalidCharacters;
+}
 class SingUpName: UIViewController {
     
     let defaultColor : UIColor = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
@@ -44,9 +48,11 @@ class SingUpName: UIViewController {
         tittle.frame                    = CGRect(x: 0, y: 150, width: self.view.frame.width, height: 20)
         nameLabel.frame                 = CGRect(x: 50, y: 300, width: self.view.frame.width , height: 20)
         imputfName.frame                = CGRect(x: 50, y: 330, width: self.view.frame.width, height: 20)
+        imputfName.textColor            = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputfName.frame       = CGRect(x: 50, y: 350, width: self.view.frame.width-100, height: 2)
         lastNameLabel.frame             = CGRect(x: 50, y: 370, width: self.view.frame.width, height: 20)
         imputLastName.frame             = CGRect(x: 50, y: 400, width: self.view.frame.width, height: 20)
+        imputLastName.textColor         = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputLastName.frame    = CGRect(x: 50, y: 420, width: self.view.frame.width-100, height: 2)
         termsAndPrivacyLabel.frame      = CGRect(x: self.view.frame.width/2-125, y: 500, width:250 , height: 50)
         continueButton.frame            = CGRect(x: 50, y: 600, width: 300, height: 40)
@@ -75,7 +81,7 @@ class SingUpName: UIViewController {
     
     let imputfName : UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -105,7 +111,7 @@ class SingUpName: UIViewController {
     
     let imputLastName: UITextField = {
         let text = UITextField()
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no
@@ -125,19 +131,15 @@ class SingUpName: UIViewController {
   
     
     let  termsAndPrivacyLabel : UILabel = {
-//        let blackLabel = NSAttributedString(string: "Sign Up & Accept", attributes: [NSAttributedString.Key.foregroundColor : UIColor.blue])
         let blackLabel = "Sign Up & Accept"
         let termsOfService  = "terms of service"
-        let text            = NSLocalizedString("By tapping \(blackLabel). you agree with our \(termsOfService) and Privacy Policity", comment: "")
-        
-//        let textAttributed = NSAttributedString(string: text)
+        let text            = NSLocalizedString("By tapping Sign up & Accept, you are agree with our Terms of Service and Privacy Policy", comment: "")
         var label           = UILabel()
         label.text          = text
-//        label.attributedText = textAttributed
         label.textAlignment = .center
         label.textColor     = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6100706336)
         label.font          = UIFont(name: "Lato-Regular", size: 12)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
     
@@ -155,18 +157,60 @@ class SingUpName: UIViewController {
         return button
     }()
     
+    func showAlertView(tittle: String, message : String) {
+        let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
+        let cancel  = UIAlertAction(title: "Cancel", style: .default) { (action) -> Void in
+        }
+        alerController.addAction(cancel)
+        self.navigationController?.present(alerController, animated: true, completion: nil)
+    }
+    
+    
     
     @objc func signUpAccept() {
 
         guard   let userName = imputfName.text,
                 let lastName = imputLastName.text
+            
         else {return}
-    
-        let viewModel = LoginViewModel()
-    
-        viewModel.setDictionaryWhitStrings(whit: "\(userName) \(lastName)", andKey: 1)
         
-    self.navigationController?.pushViewController(SingUpBirthday(), animated: true)
+        if ( userName.count > 2 && userName.count < 25 && lastName.count > 2 && lastName.count < 25 && validateString(string: userName)) {
+            
+            
+            let viewModel = LoginViewModel()
+
+            viewModel.setDictionaryWhitStrings(whit: "\(userName) \(lastName)", andKey: 1)
+            
+            self.navigationController?.pushViewController(SingUpBirthday(), animated: true)
+        }
+            //TODO : - Validate special characters
+        else {
+            showAlertView(tittle: "error", message: "Invalid string , the name or lastName , must be more than 2 characters and less than 25")
+        }
+    
+       
+    }
+    
+    func validateString(string : String) -> Bool {
+        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
+        var isEqual = false
+        
+        for character in string {
+            
+            for special in specialCharacters {
+                let letter = String(character)
+
+                if (letter == special){
+                    isEqual = true
+                }
+            }
+        }
+        
+        if isEqual {
+            return false
+        }else {
+            return true
+        }
     }
     
 }

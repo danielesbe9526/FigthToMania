@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  FightomaniaApp
+
+  Created by Usuario1 on 11/11/18.
+  Copyright © 2018 Usuario1. All rights reserved.
+*/
+
+/* Otras Etiquetas */
+
+
+"Welcome"                               = "Bienvenido";
+"Enter confirmation code"               = "Ingresa el código de confirmación";
+"Enter the code we send to your email"  = "Escribe el código que enviamos a tu correo";
+"Code"                                  = "Código";
+"Resend"                                = "Reenviar";
+"Terms and condition's"                 = "Terminos y condiciones";
+
+"Want to become a new fighter?"         = "¿Quieres ser un nuevo luchador?";
+"Sign up here"                          = "Regístrate aquí";
+"Fighter Name"                          = "Nombre de luchador";
+"Password"                              = "Contraseña";
+"Stay signed in"                        = "Mantenerme conectado";
+"Log in"                                = "Inicia Sesión";
+"I don't remember my password"          = "No recuerdo mi contraseña";
+
+"What is your name?"                     = "¿Cómo te llamas?";
+"First Name"                            = "Nombres";
+"Last Name"                             = "Apellidos";
+"By tapping Sign up & Accept, you are agree with our Terms of Service and Privacy Policy"   = "Al pulsar Aceptar y Registrarme, estás de acuerdo con nuestros Términos del servicio y nuestra Politica de privacidad";
+"Sign Up & Accept"                      = "Aceptar y Registrarme";
+
+
+"When is you birthday?"                 = "¿Cuál es tu fecha de nacimiento?";
+"Continue"                              = "Continuar";
+"Pick a fighter name"                   = "Elige un nombre de luchador";
+"Your fighter name is how other fighters find you" = "Tu nombre de luchador permite a otros luchadores encontrarte";
+"Set a password"                        = "Crea tu contraseña";
+"Your password must be at least 8 characters long, include a capital letter, a number and a symbol"                             = "Tu contraseña debe contener al menos 8 carácteres, incluyendo una mayúscula, un número y un símbolo";
+
+"Hide"                                  = "Ocultar";
+"Show"                                  = "Mostrar";
+"What is your email address?"           = "¿Cuál es tu dirección de correo electrónico?";
+"We will send you a confirmation link for complete the registration"  = "Enviaremos un enlace de confirmación para completar tu registro";
+"Email"                                 = "Correo electrónico";
+"Registry Confirmation"                 = "Confirma tu registro";
+"Please verify your email for confirmate your register"   = "Por favor verifica tu correo electronico para confirmar tu registro";
+"OK"                                    = "Vale";
+
+
+"Perfect! you are a fighter in Fightomania"  = "¡Perfecto! Ya eres un luchador en Fightomania";
+"Now pick up a Battle Cry for provoke your opponents"  = "Ahora elige un grito de batalla para provocar a tus rivales";
+"Need inspiration? You can complete later in profile section" = "¿Necesitas inspiración? Puedes completar este paso en tu sección de perfil";
+"Fight Now"                             = "Lucha ahora";
+"Reset Password"                        = "Recupera tu contraseña";
+"Confirm your email to send you a reset password link"   = "Confirma tu correo para enviarte un enlace de recuperación de contraseña";
+"Send Link"                             = "Envíar Enlace";
+
+
+

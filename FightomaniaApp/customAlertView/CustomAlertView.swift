@@ -33,8 +33,6 @@ class CustomAlertView: UIViewController {
     func setUpView()  {
         
         
-//        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        
         self.view.addSubview(alertView)
         alertView.frame           = CGRect(x: self.view.frame.width/2-125, y: 300, width: 250, height: 200)
         alertView.layer.cornerRadius = 15

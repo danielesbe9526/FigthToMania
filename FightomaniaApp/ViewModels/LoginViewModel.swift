@@ -44,6 +44,11 @@ class LoginViewModel {
         
     }
     
+    func getErrorMessage(error : String)  {
+        
+        let alert = SingUpVerification()
+        alert.showAlertView(tittle: "Error", message: error)
+    }
     func signInWihtCurrentUser(user : user)  {
         let model = LoginModel()
         model.createuser(user: user)

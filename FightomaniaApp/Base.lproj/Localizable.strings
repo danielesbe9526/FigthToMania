@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  FightomaniaApp
+
+  Created by Usuario1 on 11/11/18.
+  Copyright © 2018 Usuario1. All rights reserved.
+*/
+
+
+"Welcome"                                   = "Welcome";
+"Enter confirmation code"                   = "Enter confirmation code";
+"Enter the code we send to your email"      = "Enter the code we send to your email";
+"Code"                                      = "Code";
+"Resend"                                    = "Resend";
+"Terms and condition's"                     = "Terms and condition's";
+
+
+"Want to become a new fighter?"                     = "Want to become a new fighter?";
+"Sign up here"                                      = "Sign up here";
+"Fighter Name"                                      = "Fighter Name";
+"Password"                                          = "Password";
+"Stay signed in"                                    = "Stay signed in";
+"Log in"                                            = "Log in";
+"I don't remember my password"                      = "I don't remember my password";
+"What is your name?"                                 = "What is your name?";
+"First Name"                                        = "First Name";
+"Last Name"                                         = "Last Name";
+"By tapping Sign up & Accept, you are agree with our Terms of Service and Privacy Policy"                                                   = "By tapping Sign up & Accept, you are agree with our Terms of Service and Privacy Policy";
+"Sign Up & Accept"                                  = "Sign Up & Accept";
+"When is you birthday?"                             = "When is you birthday?";
+"Continue"                                          = "Continue";
+"Pick a fighter name"                               = "Pick a fighter name";
+"Your fighter name is how other fighters find you"; = "Your fighter name is how other fighters find you";
+"Set a password"                                    = "Set a password";
+"Your password must be at least 8 characters long, include a capital letter, a number and a symbol"                                         = "Your password must be at least 8 characters long, include a capital letter, a number and a symbol";
+
+"Hide"                                              = "Hide";
+"Show"                                              = "Show";
+"What is your email address?"                       = "What is your email address?";
+"We will send you a confirmation link for complete the registration"   = "We will send you a confirmation link for complete the registration";
+"Email"                                             = "Email";
+"Registry Confirmation"                             = "Registry Confirmation";
+"Please verify your email for confirmate your register" = "Please verify your email for confirmate your register";
+"OK"                                                = "OK";
+"Perfect! you are a fighter in Fightomania"         = "Perfect! you are a fighter in Fightomania";
+"Now pick up a Battle Cry for provoke your opponents" = "Now pick up a Battle Cry for provoke your opponents";
+"Need inspiration? You can complete later in profile section" = "Need inspiration? You can complete later in profile section";
+"Fight Now"                                         = "Fight Now";
+"Reset Password"                                    = "Reset Password";
+ "Confirm your email to send you a reset password link" = "Confirm your email to send you a reset password link";
+"Send Link"                                         = "Send Link";

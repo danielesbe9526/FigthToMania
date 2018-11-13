@@ -14,10 +14,6 @@ class LoginModel {
     
     var ref: DatabaseReference?
     
-    func createUserWhitCompletion (completeDownloadApi: @escaping (Bool) -> Void) {
-        
-    }
-
     func createuser(user : user)  {
         
         guard   let userEmail = user.email,
@@ -29,14 +25,18 @@ class LoginModel {
             guard let _ = authResult?.user
                 else {
                     
-                    let alert = SingUpVerification()
-                    alert.showAlertView(tittle: "Error", message: error!.localizedDescription)
-                    
-//                    let alerController = UIAlertController(title: "Invalid Password", message: error!.localizedDescription, preferredStyle: .alert)
-//                    let cancel  = UIAlertAction(title: "Cancel", style: .destructive) { (action) -> Void in
-//                    }
-//                    alerController.addAction(cancel)
-//                   self.navigationController!.present(alerController, animated: true, completion: nil)
+                    if let error = error {
+                        
+                        let errorMessage = LoginViewModel()
+                        errorMessage.getErrorMessage(error: error.localizedDescription)
+                        
+                    }else {
+                        let errorMessage = LoginViewModel()
+                        errorMessage.getErrorMessage(error: "ukwnown error")
+                    }
+                   
+//                    let alert = SingUpVerification()
+//                    alert.showAlertView(tittle: "Error", message: error.localizedDescription)
                     return
             }
             
@@ -47,9 +47,11 @@ class LoginModel {
     
     
     func register(user: user)  {
-          ref = Database.database().reference()
-       
-        ref?.child("users").childByAutoId().setValue(["user":user.name,"fighterName":user.fighterName,"birthday":user.birthday])
-//        self.ref?.child("users").child("users").setValue(["username": userName])
+        ref = Database.database().reference()
+        ref?.child("users").childByAutoId().setValue(["user":user.name,"birthday":user.birthday,"fighterName":user.fighterName])
+        
+        let succesfullMessage = LoginViewModel()
+        succesfullMessage.getErrorMessage(error: "succesfull")
+        
     }
 }
