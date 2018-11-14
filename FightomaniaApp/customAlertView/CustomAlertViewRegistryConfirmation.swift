@@ -41,8 +41,6 @@ class CustomAlertViewRegistryConfirmation: UIViewController {
         alertView.addSubview(imageIcon)
         alertView.addSubview(continueButton)
         
-        
-        
         tittle.frame                = CGRect(x: 20, y: 10, width: alertView.frame.width-40, height: 30)
         descriptionLabel.frame      = CGRect(x: alertView.frame.width/2-100, y: 50, width: 200, height: 30)
         imageIcon.frame             = CGRect(x: alertView.frame.width/2-100, y: 100, width:200, height: 214)

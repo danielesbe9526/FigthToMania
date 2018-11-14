@@ -46,6 +46,7 @@ class SingUpEmail: UIViewController {
         imputfEmail.textColor       = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         underLineImputEmail.frame   = CGRect(x: 50, y: 400, width: self.view.frame.width-100, height: 2)
         continueButton.frame        = CGRect(x: 50, y: 600, width: 300, height: 40)
+
     }
     
     let  emailAddress : UILabel = {
@@ -124,7 +125,8 @@ class SingUpEmail: UIViewController {
     @objc func register() {
         guard let email = imputfEmail.text else {return}
         
-        if ( email.count > 10 && email.count < 50 ) {
+        if ( email.count > 10 && email.count < 50 && validateString(string: email)) {
+            
             let viewModel = LoginViewModel()
             viewModel.setDictionaryWhitStrings(whit: email, andKey: 5)
             
@@ -133,11 +135,7 @@ class SingUpEmail: UIViewController {
             let modalViewController = CustomAlertViewRegistryConfirmation()
             modalViewController.modalPresentationStyle = .overCurrentContext
             present(modalViewController, animated: true, completion: nil)
-          
-        
             
-            
-          
         }
             //TODO : - Validate special characters
         else {
@@ -148,6 +146,32 @@ class SingUpEmail: UIViewController {
     
     func presentNextViewController () {
         self.navigationController?.pushViewController(SingUpVerification(), animated: true)
+    }
+    
+    func validateString(string : String) -> Bool {
+        
+        let emailRestriction = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let pred = NSPredicate(format:"SELF MATCHES %@", emailRestriction)
+        return pred.evaluate(with: string)
+        
+//        let specialCharacter = "@"
+//
+//        var isEqual = false
+//
+//        for character in string {
+//            let letter = String(character)
+//
+//            if (letter == specialCharacter){
+//                isEqual = true
+//            }
+//        }
+//
+//        if (isEqual ) {
+//            return true
+//        }else {
+//            return false
+//        }
     }
     
 }

@@ -126,7 +126,7 @@ class SingUpFighterName: UIViewController {
             
         }
         
-        if ( figtherName.count > 2 && figtherName.count < 15) {
+        if ( figtherName.count > 2 && figtherName.count < 15 && validateString(string: figtherName)) {
             
            
             let viewModel = LoginViewModel()
@@ -139,10 +139,32 @@ class SingUpFighterName: UIViewController {
         else {
             showAlertView(tittle: "error", message: "Invalid string ,the name of fighter, must be more than 2 characters and less than 15")
         }
+    }
+    
+    
+    func validateString(string : String) -> Bool {
         
-        
-        
-
+        let fighterNameTest = NSPredicate(format: "SELF MATCHES %@", "^[a-zA-Z0-9]+$")
+        return fighterNameTest.evaluate(with: string)
+//        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
+//        var isEqual = false
+//
+//        for character in string {
+//
+//            for special in specialCharacters {
+//                let letter = String(character)
+//
+//                if (letter == special){
+//                    isEqual = true
+//                }
+//            }
+//        }
+//
+//        if isEqual {
+//            return false
+//        }else {
+//            return true
+//        }
     }
     
     

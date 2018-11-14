@@ -132,7 +132,6 @@ class SingUpVerification: UIViewController {
         
         guard let fightCry = imputFightCry.text else {
             return
-            
         }
         
         if (  fightCry.count > 20 ) {
@@ -142,7 +141,13 @@ class SingUpVerification: UIViewController {
             let viewModel =  LoginViewModel()
             viewModel.getUserModel()
             
+            let modalViewController = LoginView()
+            modalViewController.modalPresentationStyle = .overCurrentContext
+            present(modalViewController, animated: true, completion: nil)
+            
            showAlertView(tittle: "ok", message: "successFull 2")
+            
+           
         }
     }
 }

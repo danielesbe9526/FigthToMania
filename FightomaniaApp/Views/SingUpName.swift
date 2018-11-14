@@ -174,43 +174,46 @@ class SingUpName: UIViewController {
             
         else {return}
         
-        if ( userName.count > 2 && userName.count < 25 && lastName.count > 2 && lastName.count < 25 && validateString(string: userName)) {
+        if ( userName.count > 2 && userName.count < 25 && lastName.count > 2 && lastName.count < 25 && validateString(string: userName) && validateString(string: lastName)) {
             
-            
+    
             let viewModel = LoginViewModel()
 
             viewModel.setDictionaryWhitStrings(whit: "\(userName) \(lastName)", andKey: 1)
             
             self.navigationController?.pushViewController(SingUpBirthday(), animated: true)
         }
-            //TODO : - Validate special characters
         else {
-            showAlertView(tittle: "error", message: "Invalid string , the name or lastName , must be more than 2 characters and less than 25")
+            showAlertView(tittle: "error", message: "Invalid string , the name or lastName  must be more than 2 characters and less than 25 and it is not allowed to use special characters")
         }
     
        
     }
     
     func validateString(string : String) -> Bool {
-        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
-        var isEqual = false
         
-        for character in string {
-            
-            for special in specialCharacters {
-                let letter = String(character)
-
-                if (letter == special){
-                    isEqual = true
-                }
-            }
-        }
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", "^[a-zA-Z]+$")
+        return nameTest.evaluate(with: string)
         
-        if isEqual {
-            return false
-        }else {
-            return true
-        }
+//        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
+//        var isEqual = false
+//
+//        for character in string {
+//
+//            for special in specialCharacters {
+//                let letter = String(character)
+//
+//                if (letter == special){
+//                    isEqual = true
+//                }
+//            }
+//        }
+//
+//        if isEqual {
+//            return false
+//        }else {
+//            return true
+//        }
     }
     
 }
