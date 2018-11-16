@@ -7,10 +7,10 @@
 */
 
 
-"Welcome"                                   = "Welcome";
-"Enter confirmation code"                   = "Enter confirmation code";
-"Enter the code we send to your email"      = "Enter the code we send to your email";
-"Code"                                      = "Code";
+"Welcome"                                       = "Welcome";
+"Enter confirmation code"                         = "Enter confirmation code";
+"Enter the code we send to your email"              = "Enter the code we send to your email";
+"Code"                                          = "Code";
 "Resend"                                    = "Resend";
 "Terms and condition's"                     = "Terms and condition's";
 

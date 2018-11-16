@@ -194,26 +194,7 @@ class SingUpName: UIViewController {
         
         let nameTest = NSPredicate(format: "SELF MATCHES %@", "^[a-zA-Z]+$")
         return nameTest.evaluate(with: string)
-        
-//        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
-//        var isEqual = false
-//
-//        for character in string {
-//
-//            for special in specialCharacters {
-//                let letter = String(character)
-//
-//                if (letter == special){
-//                    isEqual = true
-//                }
-//            }
-//        }
-//
-//        if isEqual {
-//            return false
-//        }else {
-//            return true
-//        }
+
     }
     
 }

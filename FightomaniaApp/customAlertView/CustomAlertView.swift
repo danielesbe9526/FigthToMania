@@ -44,7 +44,7 @@ class CustomAlertView: UIViewController {
         alertView.addSubview(emailImput)
         alertView.addSubview(underLineImputEmail)
         alertView.addSubview(resetButton)
-    
+        emailImput.textColor =  UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
         
         
         tittle.frame                = CGRect(x: 20, y: 10, width: alertView.frame.width-20, height: 30)
@@ -93,7 +93,7 @@ class CustomAlertView: UIViewController {
     let emailImput : UITextField = {
         let text = UITextField()
         //        text.placeholder                = "Email"
-        let colorText = NSAttributedString(string: ".", attributes: [NSAttributedString.Key.foregroundColor : UIColor.purple])
+        let colorText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.purple])
         text.attributedText = colorText
         text.font                       = UIFont(name: "Lato-Regular", size: 14)
         text.autocorrectionType         = UITextAutocorrectionType.no

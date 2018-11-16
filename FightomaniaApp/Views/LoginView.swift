@@ -12,7 +12,9 @@ import Firebase
 class LoginView: UIViewController {
     
     let defaultColor : UIColor = UIColor(red: 71/255, green: 1/255, blue: 56/255, alpha: 1)
-   
+    let popUpAlertView = alertViewCustom()
+    
+
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,8 @@ class LoginView: UIViewController {
     func setUpView()  {
         let tap = UITapGestureRecognizer(target: self, action: #selector(SingUp))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(rememberPasword))
-
+        
+        
         
         self.view.addSubview(welcomeLabel)
         self.view.addSubview(signUpLabel)
@@ -55,6 +58,8 @@ class LoginView: UIViewController {
         self.view.addSubview(underLineImputPassword)
         self.view.addSubview(logInButton)
         self.view.addSubview(forgetPasswordLabel)
+//        self.view.addSubview(popUpAlertView)
+        
         
         signUpLabel.isUserInteractionEnabled = true
         signUpLabel.addGestureRecognizer(tap)
@@ -77,6 +82,12 @@ class LoginView: UIViewController {
         underLineImputPassword.frame    = CGRect(x: 50, y: 490, width: self.view.frame.width-100, height: 2)
         logInButton.frame               = CGRect(x: 50, y: 600, width: 300, height: 40)
         forgetPasswordLabel.frame       = CGRect(x: 0, y: 670, width: self.view.frame.width, height: 20)
+        
+//        popUpAlertView.frame            = CGRect(x: self.view.frame.width/2, y: 300, width: 250, height: 200)
+//        popUpAlertView.frame            = CGRect(x: 50, y: 300, width: 300, height: 500)
+//        popUpAlertView.isHidden     = true
+        
+    
     }
     
     let  welcomeLabel : UILabel = {
@@ -230,7 +241,6 @@ class LoginView: UIViewController {
         if (self.navigationController != nil) {
             let alerController = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
             let cancel  = UIAlertAction(title: "Cancel", style: .default) { (action) -> Void in
-                //            print("Cancel button")
             }
             alerController.addAction(cancel)
             self.navigationController?.present(alerController, animated: true, completion: nil)
@@ -239,9 +249,14 @@ class LoginView: UIViewController {
     }
     
     @objc func rememberPasword() {
-        let modalViewController = CustomAlertView()
-        modalViewController.modalPresentationStyle = .overCurrentContext
-        present(modalViewController, animated: true, completion: nil)
+        self.view.addSubview(popUpAlertView)
+        popUpAlertView.frame            = CGRect(x: 50, y: 300, width: 300, height: 500)
+//        popUpAlertView.isHidden         = true
+        popUpAlertView.createAlertView(type: .forgetPassword)
+//        popUpAlertView.isHidden     = false
+//        let modalViewController = CustomAlertView()
+//        modalViewController.modalPresentationStyle = .overCurrentContext
+//        present(modalViewController, animated: true, completion: nil)
     }
 }
 

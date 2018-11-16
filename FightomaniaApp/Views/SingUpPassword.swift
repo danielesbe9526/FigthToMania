@@ -182,40 +182,6 @@ class SingUpPassword: UIViewController {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$")
         return passwordTest.evaluate(with: string)
-//
-//        let specialCharacters = ["!","@","#","$","%","^","&","*","{","}","?","~","<",">","[","]","+","_","-","=","/"]
-//        let number = ["1","2","3","4","5","6","7","8","9","0"]
-//
-//        var isEqual = false
-//        var haveNumber = false
-//
-//        for character in string {
-//
-//            for special in specialCharacters {
-//                let letter = String(character)
-//
-//                if (letter == special){
-//                    isEqual = true
-//                }
-//            }
-//
-//            for numb in number {
-//                 let isNumber = String(character)
-//
-//                if (isNumber == numb){
-//                    haveNumber = true
-//                }
-//            }
-//
-//           // let isUppercase = String(character)
-//
-//        }
-//
-//        if (isEqual && haveNumber) {
-//            return true
-//        }else {
-//            return false
-//        }
     }
     
     

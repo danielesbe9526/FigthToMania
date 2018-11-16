@@ -155,23 +155,6 @@ class SingUpEmail: UIViewController {
         let pred = NSPredicate(format:"SELF MATCHES %@", emailRestriction)
         return pred.evaluate(with: string)
         
-//        let specialCharacter = "@"
-//
-//        var isEqual = false
-//
-//        for character in string {
-//            let letter = String(character)
-//
-//            if (letter == specialCharacter){
-//                isEqual = true
-//            }
-//        }
-//
-//        if (isEqual ) {
-//            return true
-//        }else {
-//            return false
-//        }
     }
     
 }
